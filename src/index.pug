@@ -1,0 +1,27 @@
+extends layout.pug
+
+block prepend header-one
+	- var selected = 'index'
+	include include/header
+
+block prepend main
+	svg.shape-overlays(viewbox='0 0 100 100', preserveaspectratio='none')
+		path.shape-overlays__path
+		path.shape-overlays__path
+		path.shape-overlays__path
+
+	+b.MAIN.section_main
+		include include/motion-capture
+		include include/section-device
+		include include/section-description
+		include include/section-news
+		include include/section-start
+		//- include include/footer
+		//- +b.SECTION.new-section
+		//- 	| Main
+		//- a.button--call#create-cup-open
+		//- 	| Button
+		//- +e.SVG._icon.icon--svg.circle-svg
+		//- 	USE(xlink:href="/img/sprite.svg#icon-circle")
+		//- +e.SVG._icon.icon--svg.circle-svg
+		//- 	USE(xlink:href="/img/sprite.svg#icon-people1")
