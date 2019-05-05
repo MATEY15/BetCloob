@@ -10,38 +10,75 @@
 	box-sizing border-box
 
 html
-	// background: cBlack
+	height 100%
 
 body
+	position relative
 	overflow-x: hidden
 	min-width 320px
-	background: cWhite
-	&.overflow
-		overflow hidden
+	background: cBlackL
+	min-height 100%
+
+button
+	cursor pointer
 
 #overlayer
-	width 100%
-	height 100%
-	position fixed
-	top 0
-	left 0
-	z-index 11
-	background cBlack
+	// width 100%
+	// height 100%
+	// position fixed
+	// top 0
+	// left 0
+	// z-index 11
+	// background cBlack
 
 .align-right
 	float right
 .align-left
 	float left
 
+.text-center
+	text-align center
+.text-right
+	text-align right
+
+.noselect
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+::selection
+	background: #313031
+
+::-moz-selection
+	background: #313031
+
+.default-list
+	li
+		a
+			font-size 14px
+			ffa(fR)
+			lh(24px)
+			text-decoration none
+			c cWhite
+
+.heading-default
+	font-size 27px
+	line-height: 32px
+	c cWhite
+	ls(-0.21px)
+
 h1, h2, h3, h4, h5, h6
-	font-family: fPoppinsSemiBold
+	ffa(fSB)
 
 h1
 	font-size 32px
 h2
 	font-size 28px
 h3
-	font-size 26px
+	font-size 27px
 h4
 	font-size 22px
 h5
@@ -51,21 +88,110 @@ h6
 
 .container
 	box-sizing border-box
-	max-width 1160px
+	max-width 1460px
 	width 100%
 	padding-left 10px
 	padding-right 10px
 	margin 0 auto
-	@media screen and (max-width: 640px)
-		padding-left 20px
-		padding-right 20px
-	
-.heading-h2
-	color cBlack
-	font-family: fPoppinsSemiBold
-	font-size 32px
-	text-align center
-	@media screen and (max-width: 640px)
-		font-size 28px
-		br
-			display none
+
+// Text standart
+
+.name-option
+	font-size 12px
+	ffa(fR)
+	ls(-0.09px)
+	lh(16px)
+	c cGray
+
+.sum-option
+	font-size 14px
+	ffa(fR)
+	c cWhite
+	ls(-0.1px)
+	&__big
+		font-size 16px
+
+// CheckBox static
+
+.checkbox-static
+	display block
+	input
+		display none
+		z-index -1
+		opacity 0
+		&:checked
+			& + .checkbox-static--text
+				&:before
+					background: cYellow url(../img/checked.svg)
+					background-repeat no-repeat
+					background-position: center
+.checkbox-static--text
+	position relative
+	font-size 14px
+	ffa(fR)
+	ls(-0.1px)
+	c cWhite
+	line-height: 20px
+	cursor pointer
+	display inline-block
+	padding-left 30px
+	user-select none
+	&:before
+		content ''
+		position absolute
+		top 0px
+		left 0
+		width 18px
+		height 18px
+		border 1px solid transparent
+		brr(6px)
+		background cGraySearch
+		trn(.25s)
+		background-position: center
+
+// CheckBox slide
+
+.checkbox-default
+	input
+		position absolute
+		z-index -1
+		opacity 0
+		margin 10px 0 0 20px
+		&:checked 
+			& + .checkbox__text 
+				&:before 
+					background cWhite
+				&:after 
+					left 2px
+					background: cYellow
+.checkbox__text 
+	position relative
+	cursor pointer
+	font-size 14px
+	ffa(fR)
+	c cWhite
+	ls(-0.1px)
+	span
+		padding-left 50px
+	&:before 
+		content ''
+		position absolute
+		top 0
+		left 0
+		width 40px
+		height 24px
+		border-radius 12px
+		background cYellow
+		trn(.25s)
+	&:after 
+		content ''
+		position absolute
+		top 2px
+		left 18px
+		width 18px
+		height 18px
+		border 1px solid rgba(0, 0, 0, 0.04)
+		border-radius 50%
+		background cWhite
+		box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.15)
+		trn(.15s)

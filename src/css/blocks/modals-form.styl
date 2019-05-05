@@ -1,108 +1,151 @@
 .hidden
 	display none
 
-.mfp-close-btn-in .mfp-close
-	color: #f3495e
-	opacity: 1
-	font-size 36px
-
-.mfp-bg
-	background #1a1a1a !important
-	opacity .5
-
-.formValidate
-	span.error
+.mfp-close
+	top 40px !important
+	right 40px !important
+	width 16px
+	height 16px
+	padding 0 !important
+	opacity 1
+	font-size 0
+	&:before,
+	&:after
 		position absolute
-		font-size 14px
-		right 0
-		bottom 5px
-		color #19bfbb
+		top 6px
+		display block
+		content ""
+		width 16px
+		height 2px
+		background: cWhite
+	&:before
+		transform rotateZ(45deg)
+	&:after
+		transform rotateZ(-45deg)
 
-.main-form.popup-text
-	max-width: 800px
-	.main-form__text
-		position relative
-		p
-			font-family GothamPro
-			font-size 1rem
-			line-height 1.6rem
-			color #dfdfdf
-			
-.main-form
-	box-sizing border-box
+.default-close
 	position relative
-	max-width 520px
+	display block
+	width 16px
+	height 16px
+	cursor pointer
+	span
+		position absolute
+		top 6px
+		display block
+		width 16px
+		height 2px
+		background: cWhite
+		&:nth-child(1)
+			transform rotateZ(45deg)
+		&:nth-child(2)
+			transform rotateZ(-45deg)
+
+.popup-default
+	background: cBlackL
+	brr(10px)
 	margin 40px auto
-	background cWhite
-	color #fff
-	padding 40px 38px 38px
-	border-radius 4px
-	box-shadow 0 0 30px 1px #333
-	@media screen and (max-width: 480px)
-		margin 20px 10px
-		padding-left 22px
-		padding-right 22px
-	.heading-h2
-		margin-bottom 26px
-	.main-form__submit
-		position relative
-		.main-form_label
-			font-family: fPoppinsSemiBold
-			font-size: 12px
-			color: #000
-			text-transform uppercase
-			display block
-			margin-bottom 11px
-		.main-form_input
-			width 100%
-			font-size: 12px
-			font-family: fPoppinsSemiBold
-			line-height: 48px
-			letter-spacing: 0
-			padding 0 15px
-			color: #000
-			height 48px
-			border: 1px solid #979797
-			border-radius 4px
-		textarea
-			min-height 100px
-	.main-form_items-input
-		position relative
-		margin-bottom 18px
-	.main-form_items-button
+	max-width 592px
+	padding-left 64px
+	padding-right 64px
+	
+	label
+		text-decoration none
+		c cWhite
+		cursor pointer
+
+// Popup Login
+
+.popup-login
+	max-width 592px
+	padding 64px 64px 52px
+	.heading-popup
+		margin-bottom 36px
+	
+	.dont-account
+		display inline-block
+		margin-top 16px
+		font-size 14px
+		ffa(fSB)
+		c cWhite
+		ls(-0.1px)
 		text-align center
-		button
-			width 100%
-	.wraps-date
+		text-decoration none
+
+.heading-popup
+	font-size 27px
+	ffa(fEB)
+	ls(-0.21px)
+	c cWhite
+
+.item--input-label
+	margin-bottom 26px
+	
+	label
+		font-size 14px
+		ffa(fR)
+		ls(-0.1px)
+	a
+		font-size 14px
+		ffa(fSB)
+		c cGray
+		text-decoration none
+		trn(.25s)
+		&:hover
+			c cWhite
+	
+	.item--label
 		display flex
 		flex-direction row
 		justify-content space-between
-		.items-input--date
-			width 60%
-		.items-input--time
-			width 40%
-			display flex
-			align-items flex-end
+		margin-bottom 16px
+	.item--input
+		input
+			width 100%
+			height 56px
+			brr(6px)
+			background: cGraySearch
+			br(cGraySearch)
+			font-size 14px
+			c cWhite
+			padding 0 20px
+			ls(-0.1px)
 
-#go_popup
-	.one_go_popup
-		position relative
-		h4
-			font-family: BebasNeue
-			font-weight: 600
-			text-transform: uppercase
-			font-size: 2rem
-			letter-spacing: .04em
-			line-height: 2.8rem
-			color #fff
-			text-align center
-			margin-bottom 30px
-		p
-			font-family GothamPro
-			font-size 1rem
-			line-height 1.6rem
-			color #dfdfdf
+// Popup Send
 
+.popup-send
+	max-width 592px
+	padding 90px 64px 64px
+	
+	.heading-default
+		margin-bottom 44px
+	
+	.wrap--send-button
+		text-align center
+
+// Popup Password Reset
+
+.popup-pass-reset
+	padding-top 95px
+	padding-bottom 64px
+	.heading-default
+		margin-bottom 23px
+	.popup--text-info
+		text-align center
+		font-size 14px
+		ffa(fR)
+		ls(-0.1px)
+		c cGray
+		margin-bottom 45px
+		a
+			font-size 14px
+			ffa(fR)
+			ls(-0.1px)
+			c cWhite
+			text-decoration none
+			trn(.25s)
+			&:hover
+				c cGray
 
 .main-form_input::-webkit-input-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 .main-form_input::-moz-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}

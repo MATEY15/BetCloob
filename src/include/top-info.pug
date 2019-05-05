@@ -1,0 +1,74 @@
++b.SECTION.top-info
+	.container
+		.top-info--wrapper
+			.top-info__left.head-search
+				.head-search__search
+					a(href="#").search-link
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g><g><path d="M2.018 6.016a3.999 3.999 0 1 1 7.997 0 3.999 3.999 0 0 1-7.997 0zm8.87 3.457a5.998 5.998 0 1 0-1.414 1.414l4.964 4.966a.5.5 0 0 0 .708 0l.707-.707a.5.5 0 0 0 0-.708z"/></g></g></svg>
+						span.closed--search-form
+							span
+							span
+				.head-search__menu
+					.search-form--head
+						form
+							.search-form__wrapper
+								input(type="search-text", placeholder="Search...")#search-input.search-input
+								button(type="submit").search-submit
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g><g><path d="M2.018 6.016a3.999 3.999 0 1 1 7.997 0 3.999 3.999 0 0 1-7.997 0zm8.87 3.457a5.998 5.998 0 1 0-1.414 1.414l4.964 4.966a.5.5 0 0 0 .708 0l.707-.707a.5.5 0 0 0 0-.708z"/></g></g></svg>
+								span#cancel.cancel
+									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path fill="#6f6e70" d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+					nav
+						ul.menu--top-info
+							li
+								a(href="#") Overview
+							li
+								a(href="#") Event View
+							li
+								a(href="#") Live Schedule
+							li.is-active
+								a(href="#") Live Score
+							li
+								a(href="#") Results
+							li
+								a(href="#") Contact Us
+									if(user)
+										span.message-small 6
+							li
+								a(href="#") Help
+			.top-info__right
+				.top-info--items
+					.custom-select
+						select
+							option(value="0") English
+							option(value="1") English
+							option(value="2") Español
+							option(value="3") Deutsch
+							option(value="4") Français
+
+				.top-info--items
+					span Odds:
+					.custom-select
+						select
+							option(value="0") Fractional
+							option(value="1") Fractional 1
+							option(value="2") Fractional 2
+							option(value="3") Fractional 3
+							option(value="4") Fractional 4
+							option(value="5") Fractional 5
+
+				.top-info--items.info-time
+					p.time-head 17:36:06
+					.custom-select
+						select
+							option(value="0") UTC+3
+							option(value="1") UTC+2
+							option(value="2") UTC+4
+							option(value="2") UTC-4
+
+				.top-info--items.info-date
+					p.date-head Mon, 15 Apr
+
+			.settings-head
+				ul.settings-head--menu
+					li
+						a(href="#") Settings

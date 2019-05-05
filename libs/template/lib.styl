@@ -7,6 +7,21 @@ mr()
 ml()
 	margin-left: arguments
 
+tt($Xposition, $Yposition)
+	transform translate($Xposition, $Yposition)
+
+fff($fz, $ff, $ls)
+	font-size $fz
+	font-family $ff
+	letter-spacing  $ls
+	font-weight normal
+
+trn($time)
+	transition all $time ease-out
+
+br(arguments)
+	border 1px solid arguments
+
 pt()
 	padding-top: arguments
 pb()
@@ -16,14 +31,8 @@ pr()
 pl()
 	padding-left: arguments
 
-bt()
-	border-top: arguments
-bb()
-	border-bottom: arguments
-br()
-	border-right: arguments
-bl()
-	border-left: arguments
+ls()
+	letter-spacing: arguments
 
 icon($name)
 	background-image: url("../icons/"$name)
@@ -41,6 +50,9 @@ iconA($name)
 		position: absolute
 		icon($name)
 
+brr($rad)
+	border-radius: $rad
+
 baa()
 	position: relative
 	&:before
@@ -48,8 +60,6 @@ baa()
 		content: ''
 		position: absolute
 
-ls()
-	letter-spacing: (arguments / 1000)em
 
 lh()
 	line-height: arguments

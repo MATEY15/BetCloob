@@ -1,0 +1,70 @@
+extends layout.pug
+
+block title
+	| Login
+
+block variable
+	-var login = true
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		.container
+			h3.heading-default.text-center Open popup window
+
+			ul.default-list.link-popup
+				li
+					a(href="#popup-login").popup Login
+				li
+					a(href="#popup-send").popup Message Sent
+				li
+					a(href="#popup-pass-reset").popup Password Reset
+				li
+					a(href="#popup-pass-success").popup Password Successfully
+
+			.hidden
+
+				.popup-default.popup-send.zoom-anim-dialog#popup-pass-success
+					h3.heading-default.text-center Password has been changed successfully
+					.wrap--send-button.text-center
+						a(href="#").button.send-button Get Started
+
+				.popup-default.popup-pass-reset.zoom-anim-dialog#popup-pass-reset
+					h3.heading-default.text-center Password reset link has been sent to your email
+					p.popup--text-info
+						|  We’ve sent a password reset link to 
+						a(href="#") example@email.com
+					.wrap--send-button.text-center
+						a(href="#").button.send-button Proceed to Login
+
+				.popup-default.popup-send.zoom-anim-dialog#popup-send
+					h3.heading-default.text-center Message Sent
+					.wrap--send-button.text-center
+						a(href="#").button.send-button Proceed to Login
+
+				.popup-default.popup-login.zoom-anim-dialog#popup-login
+					h3.heading-popup Login
+					form
+						.item--input-label
+							.item--label
+								label(for="login-user") Email or Username
+								a(href="#") Forgot?
+							.item--input
+								input(id="login-user")
+						.item--input-label
+							.item--label
+								label(for="login-password") Password
+								a(href="#") Forgot?
+							.item--input
+								input(id="login-password")
+						.item--input-label
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text Remember Me
+						.item--input-label
+							button.popup-button.button Login
+						.text-center
+							a(href="#").dont-account Don’t have an account?

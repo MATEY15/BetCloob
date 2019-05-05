@@ -1,10 +1,13 @@
 include ../libs/bemto/bemto.pug
 
+block variable
+
 doctype html
 html(lang="en")
 	block head
 		head
-			title Activtrack
+			title
+				block title
 
 			meta(http-equiv="content-type", content="text/html; charset=UTF-8")
 			meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
@@ -16,17 +19,21 @@ html(lang="en")
 
 			link(rel="stylesheet", href="/css/index.css")
 
-			meta(name="theme-color", content="#3158d3")
-			meta(name="msapplication-navbutton-color", content="#3158d3")
-			meta(name="apple-mobile-web-app-status-bar-style", content="#3158d3")
+			meta(name="theme-color", content="#161516")
+			meta(name="msapplication-navbutton-color", content="#161516")
+			meta(name="apple-mobile-web-app-status-bar-style", content="#161516")
 
 	body
+		svg.shape-overlays(viewbox='0 0 100 100', preserveaspectratio='none')
+			path.shape-overlays__path
+			path.shape-overlays__path
+			path.shape-overlays__path
+
 		div#overlayer
-		block header-one
 
-		block header-two
+		block header-default
 
-		block header-blog
+		block header-login
 
 		block main
 		
