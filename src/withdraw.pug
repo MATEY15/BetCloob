@@ -1,0 +1,41 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "Withdraw"
+	-var menuChecked = "Withdraw"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				h1.black-main--head= title
+				.credit-card--drop
+					span.arrow-default
+					.head--credit-card
+						.credit-card--name
+							p Payment Method
+						.payment-card
+							img(src="img/credit-card--mc.svg", alt="")
+							.payment-card--info
+								p *4242
+								span Credit Card
+					.main--credit-card
+						p.form-withdraw--name Amount you want to withdraw
+						form
+							.form-withdraw--fill
+								span.icon-many £
+								input(value="200").input-black.text-center
+							p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
+								br
+								| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
+								br
+								| winnings made from them. Do you wish to continue?
+							button.popup-button.button Withdraw £200.00

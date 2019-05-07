@@ -1,0 +1,49 @@
+//- mixin list(data, classsub)
+//- 	ul
+//- 		each item in data.items
+//- 			li
+//- 				if(classsub == www)
+//- 					a(class=item)= item.title
+//- 				else
+//- 					a= item.title
+//- 				if item.sublevel
+//- 					+list(item, "www")
+
+//- -var data = {"title": "Title text", "items": [{"title": "Item 1"}, {"title": "Item 2", "sublevel": true, "items": [{"title": "Item 2.1"}, {"title": "Item 2.2"} ] }, {"title": "Item 3"} ] }
+
+//- nav.account-menu
+//- 	+list(data)
+
+nav.account-menu
+	ul
+		li
+			a(href="#") Deposit
+		li
+			if("Withdraw" === menuChecked)
+				a(href="withdraw.html").is-active Withdraw
+			else
+				a(href="withdraw.html") Withdraw
+			ul.account-menu--sub
+				li
+					if("Withdraw" === title)
+						a(href="withdraw.html").is-active Withdraw
+					else
+						a(href="withdraw.html") Withdraw
+				li
+					if("Bank Accounts & Cards" === title)
+						a(href="withdraw-bank.html").is-active Bank Accounts & Cards
+					else
+						a(href="withdraw-bank.html") Bank Accounts & Cards
+				li
+					if("History" === title)
+						a(href="withdraw-history.html").is-active History
+					else
+						a(href="withdraw-history.html") History
+		li
+			a(href="#") My Account
+		li
+			a(href="#") Betting History
+		li
+			a(href="#") Bonus History
+		li
+			a(href="#") Transaction History

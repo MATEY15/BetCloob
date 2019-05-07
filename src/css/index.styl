@@ -31,6 +31,10 @@ button
 	// z-index 11
 	// background cBlack
 
+// Height
+.height-36
+	height 36px
+
 .align-right
 	float right
 .align-left
@@ -74,7 +78,7 @@ h1, h2, h3, h4, h5, h6
 	ffa(fSB)
 
 h1
-	font-size 32px
+	font-size 40px
 h2
 	font-size 28px
 h3
@@ -86,6 +90,9 @@ h5
 h6
 	font-size 16px
 
+p
+	ffa(fR)
+
 .container
 	box-sizing border-box
 	max-width 1460px
@@ -93,6 +100,52 @@ h6
 	padding-left 10px
 	padding-right 10px
 	margin 0 auto
+
+// Arrow default
+
+.arrow-default
+	position relative
+	display inline-block
+	cursor pointer
+	&:after 
+		position absolute
+		content ""
+		top 1px
+		right 0
+		width 6px
+		height 6px
+		border-style: solid
+		border-width: 0 2px 2px 0
+		border-color: cWhite
+		z-index 2
+		transition all .25s ease-out
+		transform rotate(45deg)
+
+.link-back
+	position relative
+	display inline-block
+	width: 24px
+	height: 24px
+	box-shadow: 0 5px 15px rgba(17, 22, 34, 0.05)
+	border-radius: 6px
+	background-color: #353435
+	text-align center
+	trn(.15s)
+	&:hover
+		background: #403f40
+	&:after
+		position absolute
+		content ""
+		top 8px
+		left 9px
+		width 6px
+		height 6px
+		border-style: solid
+		border-width: 0 0 2px 2px
+		border-color: cWhite
+		z-index 2
+		transition all .25s ease-out
+		transform rotateZ(45deg)
 
 // Text standart
 
@@ -195,3 +248,15 @@ h6
 		background cWhite
 		box-shadow: 0 3px 1px rgba(0, 0, 0, 0.06), 0 3px 8px rgba(0, 0, 0, 0.15)
 		trn(.15s)
+
+// Phone checked
+
+.phone-checked
+	position relative
+	.select2-container
+		position absolute
+		top 0
+		left 0
+		border-right 1px solid #222022
+	input
+		padding-left 104px !important

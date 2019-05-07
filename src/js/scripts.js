@@ -1,6 +1,7 @@
 //= jquery.min.js
 //= jquery.magnific-popup.min.js
 //= select.js
+//= select2.full.js
 
 // window.onload = function(){
 //   // $("body").toggleClass('opacity');
@@ -77,6 +78,15 @@ var dropMenuUser = function() {
 	});
 };
 
+var selectNew = function() {
+	$(".select-phone").select2({
+    minimumResultsForSearch: -1,
+    id:"elementID",
+    text: "Hello!"
+  });
+  $(".select-phone").select2('data', { id:"elementID", text: "Hello!"});
+};
+
 /* Popup Window */
 
 $(".popup").magnificPopup({
@@ -94,3 +104,4 @@ $('#popup-close').on('click', function(e) {
 checkInput();
 loadBalanse();
 dropMenuUser();
+selectNew();

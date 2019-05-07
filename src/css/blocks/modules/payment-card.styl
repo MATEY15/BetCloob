@@ -1,0 +1,87 @@
+.credit-card--drop
+	position relative
+	background: cBlackD
+	brr(10px)
+	.credit-card--name
+		margin-bottom 26px
+		p
+			fsR(14px)
+			c cWhite
+	.arrow-default
+		position absolute
+		right 65px
+		top 106px
+
+// Credit Card
+
+.head--credit-card
+	padding 52px 64px 54px
+
+.payment-card
+	display flex
+	flex-direction row
+
+.payment-card--card,
+.payment-card--button
+	display flex
+	flex-direction row
+	button
+		&:not(:last-child)
+			margin-right 8px
+
+.payment-card--info
+	margin-left 11px
+	p
+		fsR(14px)
+		c cWhite
+		margin-bottom 5px
+	span
+		display block
+		font-size 12px
+		ffa(fR)
+		c cGray
+		letter-spacing: -0.09px
+		line-height: 16px
+
+.main--credit-card
+	border-top 1px solid cGrayD
+	padding 52px 65px 56px
+	.form-withdraw--name
+		fsR(14px)
+		margin-bottom 14px
+	.form-withdraw--desc
+		font-size 12px
+		c cGray
+		letter-spacing: -0.09px
+		line-height: 16px
+		margin-bottom 28px
+	.form-withdraw--fill
+		position relative
+		.icon-many
+			position absolute
+			top 21px
+			left 20px
+			fsR(14px)
+			c cWhite
+		input
+			padding 0 40px
+			margin-bottom 20px
+
+// Credit Card Edit
+
+.credit-card--edit-wrapper
+	.credit-card--edit
+		&:not(:last-child)
+			margin-bottom 8px
+
+.credit-card--edit
+	position relative
+	background: cBlackD
+	brr(10px)
+	padding 48px 65px
+	.payment-card
+		justify-content space-between
+		align-items center
+
+.add-card
+	margin 24px 0

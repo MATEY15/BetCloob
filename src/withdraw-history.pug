@@ -1,0 +1,36 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = History
+	-var title = "History"
+	-var menuChecked = "Withdraw"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				h1.black-main--head Withdraw
+					
+				.table-history
+					table
+						thead
+							th Date & Time
+							th Amount
+							th Method
+							th Status
+							th Action
+						tbody
+							tr
+								td 11-03-2019 / 20:54
+								td £200.00
+								td Bank transfer
+								td Processed
+								td
+									a(href="#") Cancel
