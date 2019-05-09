@@ -189,6 +189,9 @@ p
 	display inline-block
 	padding-left 30px
 	user-select none
+	&:hover
+		&:before
+			border 1px solid rgba(255, 195, 10, 0.5)
 	&:before
 		content ''
 		position absolute
@@ -200,7 +203,7 @@ p
 		brr(6px)
 		background cGraySearch
 		trn(.25s)
-		background-position: center
+		background-position: center !important
 
 // CheckBox slide
 
@@ -260,3 +263,7 @@ p
 		border-right 1px solid #222022
 	input
 		padding-left 104px !important
+
+.default-label
+	display inline-block
+	fsR(14px)

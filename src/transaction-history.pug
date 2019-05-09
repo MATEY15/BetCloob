@@ -3,8 +3,8 @@ extends layout.pug
 block variable
 	-var user = true
 	-var titleName = History
-	-var title = "History"
-	-var menuChecked = "Withdraw"
+	-var title = "Transaction History"
+	-var menuChecked = "Transaction History"
 
 block header-login
 
@@ -17,31 +17,23 @@ block prepend main
 				include include/menu/account-menu
 			.main-container
 				.heading--main-container
-					h1.black-main--head Withdraw
+					h1.black-main--head= title
 					.filter-button--wrapper#filter-button--wrapper
 						button.button.filter-button#filter-open Filter
 							span.filter-button__count 2
 						.filter-hidden
 							form(action="")
 								.filter-hidden--items
-									p.status-filter Status
+									p.status-filter Type
 									.checkout-status
 										.checkout-status--items
 											label.checkbox-static
-												input(type="checkbox", checked, required="").checkbox-static--input
-												p.checkbox-static--text Status 1
-										.checkout-status--items
-											label.checkbox-static
 												input(type="checkbox", required="").checkbox-static--input
-												p.checkbox-static--text Status 2
-										.checkout-status--items
-											label.checkbox-static
-												input(type="checkbox", required="").checkbox-static--input
-												p.checkbox-static--text Status 3
+												p.checkbox-static--text Deposit
 										.checkout-status--items
 											label.checkbox-static
 												input(type="checkbox", checked, required="").checkbox-static--input
-												p.checkbox-static--text Status 4
+												p.checkbox-static--text Withdraw
 
 								.filter-hidden--items
 									.filter-date
@@ -64,58 +56,59 @@ block prepend main
 				.table-history--wrapper
 					table.table-history
 						thead
-							th(width="164") Date & Time
-							th(width="98") Amount
-							th(width="130") Method
+							th(width="90") Product
+							th(width="92") Type
+							th(width="116") Date & Time
+							th(width="96") Amount
 							th(width="110") Status
-							th(width="120") Action
+							th Comment
 						tbody
 							tr
-								td 11-03-2019 / 20:54
+								td Sport
+								td Deposit
+								td 11-03-2019
+									br
+									| 20:54
 								td £200.00
-								td Bank transfer
 								td Processed
-								td
-									a(href="#") Cancel
+								td Comment 
+									br
+									| text 
+									br
+									| goes here
 							tr
-								td 11-03-2019 / 20:54
+								td Sport
+								td Deposit
+								td 11-03-2019
+									br
+									| 20:54
 								td £200.00
-								td Bank transfer
 								td Processed
-								td
-									a(href="#") Cancel
+								td Comment text goes here
 							tr
-								td 11-03-2019 / 20:54
+								td Sport
+								td Deposit
+								td 11-03-2019
+									br
+									| 20:54
 								td £200.00
-								td Bank transfer
 								td Processed
-								td
-									a(href="#") Cancel
+								td Comment text goes here
 							tr
-								td 11-03-2019 / 20:54
+								td Sport
+								td Deposit
+								td 11-03-2019
+									br
+									| 20:54
 								td £200.00
-								td Bank transfer
 								td Processed
-								td
-									a(href="#") Cancel
+								td Comment text goes here
 							tr
-								td 11-03-2019 / 20:54
+								td Sport
+								td Deposit
+								td 11-03-2019
+									br
+									| 20:54
 								td £200.00
-								td Bank transfer
 								td Processed
-								td
-									a(href="#") Cancel
-							tr
-								td 11-03-2019 / 20:54
-								td £200.00
-								td Bank transfer
-								td Processed
-								td
-									a(href="#") Cancel
-							tr
-								td 11-03-2019 / 20:54
-								td £200.00
-								td Bank transfer
-								td Processed
-								td
-									a(href="#") Cancel
+								td Comment text goes here

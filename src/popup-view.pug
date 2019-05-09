@@ -1,0 +1,42 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = History
+	-var title = "Popup view"
+	-var menuChecked = "Popup view"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				.heading--main-container
+					h1.black-main--head= title
+				.black-main--wrap
+					ul.default-list.link-popup
+						li
+							a(href="#popup-login").popup Login
+						li
+							a(href="#reset-password").popup Reset Password
+						li
+							a(href="#name-email").popup Forgot username or email?
+						li
+							a(href="#forgot-password").popup Forgot password?
+						li
+							a(href="#popup-send").popup Message Sent Message
+						li
+							a(href="#popup-pass-reset").popup Password Reset Message
+						li
+							a(href="#popup-pass-success").popup Password Successfully Message
+						li
+							a(href="#popup--withdraw-cancel").popup Withdraw Cancel
+						li
+							a(href="#popup--withdraw-success").popup Withdraw Successfully
+						li
+							a(href="#popup-reciept").popup Withdraw Reciept

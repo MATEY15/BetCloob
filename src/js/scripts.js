@@ -2,6 +2,7 @@
 //= jquery.magnific-popup.min.js
 //= select.js
 //= select2.full.js
+//= jquery-ui.js
 
 // window.onload = function(){
 //   // $("body").toggleClass('opacity');
@@ -11,6 +12,16 @@
 //     overlay.toggle();
 //   }, 800);
 // }
+
+var filterDate = function() {
+	var minDate = new Date();
+	$( ".datapicker" ).datepicker({
+		dateFormat: 'dd.mm.yy',
+		minDate: minDate,
+	}).val();
+	$(".datapicker").attr('autocomplete', 'off');
+};
+
 
 function heightFooter(){
   var heightFoot = $('.footer').outerHeight();
@@ -78,6 +89,22 @@ var dropMenuUser = function() {
 	});
 };
 
+var filterOpen = function() {
+	$('#filter-open').on('click', function() {
+		$(this).next('.filter-hidden').toggleClass('is-active');
+	});
+	$(document).mouseup(function (e) {
+		var container = $("#ui-datepicker-div");
+		var container2 = $("#filter-button--wrapper");
+		if (container.has(e.target).length === 1){
+			
+		}
+		else if( container2.has(e.target).length === 0) {
+			$('#filter-open').next('.filter-hidden').removeClass('is-active');
+		}
+	});
+};
+
 var selectNew = function() {
 	$(".select-phone").select2({
     minimumResultsForSearch: -1,
@@ -104,4 +131,6 @@ $('#popup-close').on('click', function(e) {
 checkInput();
 loadBalanse();
 dropMenuUser();
+filterOpen();
 selectNew();
+filterDate();

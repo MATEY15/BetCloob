@@ -17,7 +17,21 @@
 nav.account-menu
 	ul
 		li
-			a(href="#") Deposit
+			if("Popup view" === menuChecked)
+				a(href="popup-view.html").is-active Popup view
+			else
+				a(href="popup-view.html") Popup View
+		li
+			if("Deposit" === menuChecked)
+				a(href="deposit.html").is-active Deposit
+			else
+				a(href="deposit.html") Deposit
+			ul.account-menu--sub
+				li
+					if("Deposit" === title)
+						a(href="deposit.html").is-active Deposit
+					else
+						a(href="deposit.html") Deposit
 		li
 			if("Withdraw" === menuChecked)
 				a(href="withdraw.html").is-active Withdraw
@@ -46,4 +60,7 @@ nav.account-menu
 		li
 			a(href="#") Bonus History
 		li
-			a(href="#") Transaction History
+			if("Transaction History" === menuChecked)
+				a(href="transaction-history.html").is-active Transaction History
+			else
+				a(href="transaction-history.html") Transaction History

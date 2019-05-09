@@ -1,6 +1,14 @@
 .hidden
 	display none
 
+.mfp-bg
+	background-color: rgba(36, 35, 36, 0.85)
+	// background-image: url(../img/blur.svg)
+	// -webkit-filter: blur(5px)
+	// -moz-filter: blur(5px)
+	// filter: blur(5px)
+	// filter: url(../img/blur.svg#blur)
+
 .mfp-close
 	top 40px !important
 	right 40px !important
@@ -200,6 +208,37 @@
 
 .top-wrap--popup
 	margin-bottom 36px
+
+.popup--withdraw-cancel
+	.heading-default
+		margin-bottom 67px
+	.wrap--send-button
+		.button
+			&:not(:last-child)
+				margin-right 16px
+
+.popup--withdraw-success
+	.heading-default
+		margin-bottom 67px
+
+// Withdraw Reciept
+
+.wrapper--reciept-info
+	background: cBlackD
+	brr(6px)
+	padding 28px 24px 25px
+	.reciept-info
+		display flex
+		flex-direction row
+		justify-content space-between
+		c cGray
+		&:not(:last-child)
+			margin-bottom 37px
+		span
+			fsR(14px)
+			lh(20px)
+			
+
 
 .main-form_input::-webkit-input-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 .main-form_input::-moz-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}

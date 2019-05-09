@@ -15,6 +15,10 @@
 	trn(.25s)
 	&:hover
 		background: cGraySearch
+	&.gray-color
+		background: cGrayL
+		&:hover
+			background: #ccc
 	@media screen and (max-width: 600px)
 		font-size 12px
 
@@ -55,3 +59,32 @@
 	&:hover
 		background: cBlackL
 		c cWhite
+
+.filter-button
+	background: cGrayL
+	c cBlackL
+	padding 16px 24px 15px
+	height auto
+	&:hover
+		background: cGrayL
+		c cWhite
+	.filter-button__count
+		margin-left 10px
+		background: cBlackL
+		display inline-block
+		min-width 16px
+		height 16px
+		line-height 16px
+		font-size 11px
+		c cGrayL
+		brr(6px)
+
+.cancel-button
+	min-width 146px
+	height 56px
+	font-size 16px
+	padding 20px 20px
+	background: cYellow
+	c cBlackL
+	&:hover
+		background cYellowL

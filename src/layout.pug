@@ -16,7 +16,7 @@ html(lang="en")
 			link(rel="shortcut icon" href="img/favicon/apple-touch-icon-72x72.png" type="image/x-icon")
 			link(rel="shortcut icon" href="img/favicon/apple-touch-icon-144x144.png" type="image/x-icon")
 
-			link(rel="stylesheet", href="/css/index.css")
+			link(rel="stylesheet", href="css/index.css")
 
 			meta(name="theme-color", content="#161516")
 			meta(name="msapplication-navbutton-color", content="#161516")
@@ -39,27 +39,10 @@ html(lang="en")
 		block footer
 			include include/footer
 
-		.hidden
-			+b.main-form.zoom-anim-dialog#popup-send
-				+e.FORM.__submit.formValidate
-					H2.heading-h2
-						| Request Quote
-					+e.items-input
-						+e.LABEL().label Name
-						+e.INPUT(name="text", placeholder="First and Last Name").input
-					+e.items-input
-						+e.LABEL().label E-Mail*
-						+e.INPUT(name="text", placeholder="E-mail").input
-					+e.items-input
-						+e.LABEL().label Company name*
-						+e.INPUT(name="text", placeholder="Company name").input
-					+e.items-input
-						+e.LABEL().label message
-						+e.TEXTAREA(name="text", placeholder="How SwiftMotion can help you?").input
-					+e.items-button
-						button.button(type="submit") Request Quote
+		block popup
+			include include/popup
 
 		block scripts
 			script(src='https://unpkg.com/flipping@latest/dist/flipping.web.js')
-			script(src='/js/shape-overlays.js')
-			script(src='/js/scripts.js')
+			script(src='js/shape-overlays.js')
+			script(src='js/scripts.js')
