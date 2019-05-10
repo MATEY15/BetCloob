@@ -16,6 +16,7 @@
 
 .head--credit-card
 	padding 52px 64px 54px
+	cursor pointer
 
 .payment-card
 	display flex
@@ -46,6 +47,8 @@
 .main--credit-card
 	border-top 1px solid cGrayD
 	padding 52px 64px 56px
+	perspective: 800px
+	perspective-origin: center center
 	.form-withdraw--name
 		fsR(14px)
 		margin-bottom 14px
@@ -85,3 +88,69 @@
 
 .add-card
 	margin 24px 0
+
+.label-payment--fill
+	position relative
+	margin-bottom 30px
+	.icon-many
+		position absolute
+		top 21px
+		left 20px
+		fsR(14px)
+		c cWhite
+
+
+// Animation Card
+
+.wrapper-show--animate
+	opacity 0
+	visibility hidden
+	perspective: 500px
+	transform: rotateX(-20deg)
+	animation: FadeOut .3s ease-in-out;
+	&.is-show
+		opacity 1
+		visibility visible
+		animation: FadeIn .3s ease-in-out;
+		transform: rotateX(0deg)
+
+@keyframes FadeIn
+	0%
+		opacity: 0
+		visibility hidden
+		transform: rotateX(-20deg)
+	100%
+		opacity: 1
+		visibility visible
+		transform: rotateX(0deg)
+
+@keyframes FadeOut
+	0%
+		opacity: 1
+		visibility visible
+		transform: rotateX(0deg)
+	99%
+		opacity: 0
+		visibility hidden
+		transform: rotateX(-20deg)
+	100%
+		opacity: 0
+		visibility hidden
+		transform: rotateX(0deg)
+
+
+// Placeholder White
+
+.plch-white::-webkit-input-placeholder {color:#ffffff;}
+.plch-white::-moz-placeholder          {color:#ffffff;}
+.plch-white:-moz-placeholder           {color:#ffffff;}
+.plch-white:-ms-input-placeholder      {color:#ffffff;}
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.2s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.2s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.2s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.2s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.2s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.2s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.2s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.2s ease;}

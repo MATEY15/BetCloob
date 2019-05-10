@@ -29,14 +29,15 @@ block prepend main
 								p *4242
 								span Credit Card
 					.main--credit-card
-						p.form-withdraw--name Amount you want to withdraw
-						form
-							.form-withdraw--fill
-								span.icon-many £
-								input(value="200").input-black.text-center
-							p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
-								br
-								| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
-								br
-								| winnings made from them. Do you wish to continue?
-							button.popup-button.button Withdraw £200.00
+						.wrapper-show--animate.is-show
+							p.form-withdraw--name Amount you want to withdraw
+							form
+								.form-withdraw--fill
+									span.icon-many £
+									input(value="200").input-black.text-center
+								p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
+									br
+									| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
+									br
+									| winnings made from them. Do you wish to continue?
+								button.popup-button.button Withdraw £200.00

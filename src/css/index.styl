@@ -82,9 +82,9 @@ h1
 h2
 	font-size 28px
 h3
-	font-size 27px
+	// font-size 24px
 h4
-	font-size 22px
+	font-size 24px
 h5
 	font-size 18px
 h6
@@ -92,6 +92,10 @@ h6
 
 p
 	ffa(fR)
+
+a
+	c cYellow
+	text-decoration none
 
 .container
 	box-sizing border-box
@@ -130,7 +134,18 @@ p
 	border-radius: 6px
 	background-color: #353435
 	text-align center
+	text-decoration none
 	trn(.15s)
+	&.text-back
+		padding-left 24px
+		width auto
+		span
+			display inline-block
+			// height 24px
+			padding 0px 9px 3px 7px
+			fsSB(14px)
+			c cWhite
+			border-left 1px solid #1d1c1d
 	&:hover
 		background: #403f40
 	&:after
@@ -189,6 +204,9 @@ p
 	display inline-block
 	padding-left 30px
 	user-select none
+	a
+		c #ffc400
+		text-decoration none
 	&:hover
 		&:before
 			border 1px solid rgba(255, 195, 10, 0.5)
@@ -267,3 +285,9 @@ p
 .default-label
 	display inline-block
 	fsR(14px)
+	margin-bottom 14px
+
+.default-link
+	fsSB(14px)
+	c cWhite
+	text-decoration none

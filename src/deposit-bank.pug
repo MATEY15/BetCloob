@@ -4,7 +4,7 @@ block variable
 	-var user = true
 	-var titleName = Withdraw
 	-var title = "Bank Accounts & Cards"
-	-var menuChecked = "Withdraw"
+	-var menuChecked = "Deposit"
 
 block header-login
 
@@ -17,8 +17,7 @@ block prepend main
 				include include/menu/account-menu
 			.main-container
 				.heading--main-container
-					h1.black-main--head Withdraw
-
+					h1.black-main--head= title
 				.credit-card--edit-wrapper
 
 					.credit-card--edit

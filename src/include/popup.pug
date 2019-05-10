@@ -45,6 +45,12 @@
 		.wrap--send-button.text-center
 			a(href="#").button.send-button Get Started
 
+	//- New payment method has been successfully added
+	.popup-default.popup-send.zoom-anim-dialog#popup-payment-success
+		h3.heading-default.text-center New payment method has been successfully added
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Continue
+
 	//- Password reset link has been sent to your email
 	.popup-default.popup-pass-reset.zoom-anim-dialog#popup-pass-reset
 		h3.heading-default.text-center Password reset link has been sent to your email
@@ -84,6 +90,157 @@
 						img(src="img/captcha.jpg", alt="")
 			.item--input-label
 				button.popup-button.button Save New Password
+
+	//- Registration
+	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Registration
+			snan.step-count Step 
+				span.cont-num 1 
+				| of 3
+		.height-36
+		form
+			.step-popup.registration-steps.step1
+				.item--input-label
+					.item--label
+						label(for="phone-number") Phone Number
+					.item--input.phone-checked
+						select.select-phone.select-black
+							option(value="") +1
+							option(value="") +2
+							option(value="") +44
+							option(value="") +33
+						input(id="phone-number")
+				.item--input-label
+					button.popup-button.button Continue
+				p.popup-text--gray.text-center Enter your mobile phone number and we will send you a verification code
+				.link--popup-default.text-center
+					a(href="#").default-link Already have an account?
+			.step-popup.registration-steps.step2
+				.item--input-label
+					.item--label
+						label(for="verification-code") Verification Code
+					.item--input
+						input(id="verification-code").valid-error
+						span.error-message Verification code is invalid or expired
+				.item--input-label
+					button.popup-button.button Enter Code
+				p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+				.link--popup-default.text-center
+					a(href="#").default-link.resend-code Resend Code
+					.resend-time wait 
+						span#time 00:45
+			.step-popup.registration-steps.step3
+				.item--input-label
+					.item--label
+						label(for="registration-email") Email
+					.item--input
+						input(id="registration-email")
+				.item--input-label
+					.item--label
+						label(for="registration-pass1") Password
+					.item--input
+						input(id="registration-pass1")
+				.item--input-label
+					.item--label
+						label(for="registration-pass2") Confirm Password
+					.item--input
+						input(id="registration-pass2")
+				.item--input-fifty
+					.item--input-label
+						.item--label
+							label(for="registration-name1") First Name
+						.item--input
+							input(id="registration-name1")
+					.item--input-label
+						.item--label
+							label(for="registration-name2") Last Name
+						.item--input
+							input(id="registration-name2")
+				.item--input-label
+					.item--label
+						label(for="registration-user") Username
+					.item--input
+						input(id="registration-user")
+				.item--input-label
+					.item--gender
+						label Gender
+						.payment--select-price.payment--gender
+							label.radio--select-price
+								input(type="radio" name="radio" required="")
+								.text--select-price Male
+							label.radio--select-price
+								input(type="radio" name="radio" required="")
+								.text--select-price Female
+				.item--input-label
+					.item--label
+						label Date of Birth
+					.flex--custom-select
+						.custom-select.select-bold
+							select
+								option(value="0") Day
+								option(value="1") 1
+								option(value="2") 2
+								option(value="3") 3
+								option(value="4") 4
+								option(value="5") 5
+								option(value="6") 6
+								option(value="7") 7
+								option(value="8") 8
+								option(value="9") 9
+								option(value="10") 10
+								option(value="11") 11
+								option(value="12") 12
+								option(value="13") 13
+								option(value="14") 14
+								option(value="15") 15
+								option(value="16") 16
+								option(value="17") 17
+								option(value="18") 18
+								option(value="19") 19
+								option(value="20") 20
+								option(value="21") 21
+								option(value="22") 22
+								option(value="23") 23
+								option(value="24") 24
+								option(value="25") 25
+								option(value="26") 26
+								option(value="27") 27
+								option(value="28") 28
+								option(value="29") 29
+								option(value="30") 30
+								option(value="31") 31
+						.custom-select.select-bold.mounth
+							select
+								option(value="0") Month
+								option(value="1") January
+								option(value="2") February
+								option(value="3") April
+								option(value="4") March
+								option(value="5") May
+								option(value="6") June
+								option(value="7") July
+								option(value="8") August
+								option(value="9") September
+								option(value="10") October
+								option(value="11") November
+								option(value="12") December
+						.custom-select.select-bold
+							select
+								option(value="0") Year
+								option(value="1") 1960
+								option(value="2") 1961
+								option(value="3") 1962
+								option(value="4") 1963
+								option(value="5") 1964
+				.label-payment--fill
+					label.checkbox-static
+						input(type="checkbox", required="").checkbox-static--input
+						p.checkbox-static--text I agree with the 
+							a(href="terms-conditions.html") terms and conditions
+				.item--input-label
+					button.popup-button.button Finish
 
 	//- Login
 	.popup-default.popup-login.zoom-anim-dialog#popup-login
@@ -164,3 +321,100 @@
 			.item--input-label
 				button.popup-button.button Reset Password
 			p.popup-text--gray.text-center Enter your email and we will send you password reset link
+
+	//- Edit Payment Method
+	.popup-default.edit-payment.default-offset.zoom-anim-dialog#edit-payment
+		h3.heading-popup Edit Payment Method
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="accoun-name") Account holder name
+				.item--input
+					input(id="accoun-name")
+			.item--input-label
+				.item--label
+					label(for="edit-card") 16 digit card number
+				.item--input
+					input(id="edit-card", placeholder="3543 9328 2456 2388", name="credit-number", pattern="\d*", maxlength="19").plch-white.cc-number
+			.item--input-label
+				.item--label
+					label(for="edit-iban") IBAN
+				.item--input
+					input(id="edit-iban", placeholder="DE89 3704 0044 0532 0130 00").plch-white
+			.item--input-label
+				button.popup-button.button Save
+
+	//- Change Email
+	.popup-default.new-password.default-offset.zoom-anim-dialog#new-password
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="new-email") New Email
+				.item--input
+					input(id="new-email")
+			.item--input-label
+				button.popup-button.button Change Email
+			p.popup-text--gray.text-center Your current email address is 
+				a(href="#").link-white example@example.com
+
+	//- Change Email (Phone Number)
+	.popup-default.new-password--phone.default-offset.zoom-anim-dialog#new-password--phone
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="phone-number") Phone Number
+				.item--input.phone-checked
+					select.select-phone.select-black
+						option(value="") +1
+						option(value="") +2
+						option(value="") +44
+						option(value="") +33
+					input(id="phone-number")
+			.item--input-label
+				button.popup-button.button Continue
+			p.popup-text--gray.text-center Enter your mobile phone number and we will send you a verification code
+
+	//- Verification Code
+	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="ver-code") Verification Code
+				.item--input
+					input(id="ver-code").valid-error
+					span.error-message Verification code is invalid or expired
+			.item--input-label
+				button.popup-button.button Enter Code
+			p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+			.link--popup-default.resend-wrapper.text-center
+				a(href="#").default-link.resend-code Resend Code
+				.resend-time wait 
+					span#time 00:45
+
+	//- Verify Your Email Address
+	.popup-default.verification-emeil--you.no-closed.default-offset.zoom-anim-dialog#verification-emeil--you
+		a(href="#").log-out--popup Log Out
+		h3.heading-default.text-center Password reset link has been sent to your email
+		p.gray--text-info
+			|  We now need to verify your email address. We’ve sent an email to 
+			a(href="#") example@email.com 
+			| to verify your address. Please click the link in that email to continue.
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Resend Verification Email
+			.wrapper-popup--message.text-center
+				span.message-verification New verification email has been sent
+		.resend-wrapper.text-center
+			a(href="#").default-link.resend-code Change Email Address

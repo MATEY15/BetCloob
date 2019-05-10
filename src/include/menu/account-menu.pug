@@ -16,45 +16,77 @@
 
 nav.account-menu
 	ul
+
 		li
 			if("Popup view" === menuChecked)
 				a(href="popup-view.html").is-active Popup view
 			else
 				a(href="popup-view.html") Popup View
+		//- Deposit
 		li
 			if("Deposit" === menuChecked)
 				a(href="deposit.html").is-active Deposit
 			else
 				a(href="deposit.html") Deposit
-			ul.account-menu--sub
-				li
-					if("Deposit" === title)
-						a(href="deposit.html").is-active Deposit
-					else
-						a(href="deposit.html") Deposit
+			if("Deposit" === menuChecked)
+				ul.account-menu--sub
+					li
+						if("Deposit" === title)
+							a(href="deposit.html").is-active Deposit
+						else
+							a(href="deposit.html") Deposit
+					li
+						if("Bank Accounts & Cards" === title)
+							a(href="deposit-bank.html").is-active Bank Accounts & Cards
+						else
+							a(href="deposit-bank.html") Bank Accounts & Cards
+					li
+						if("History" === title)
+							a(href="deposit-history.html").is-active History
+						else
+							a(href="deposit-history.html") History
+
+		//- Withdraw
+
 		li
 			if("Withdraw" === menuChecked)
 				a(href="withdraw.html").is-active Withdraw
 			else
 				a(href="withdraw.html") Withdraw
-			ul.account-menu--sub
-				li
-					if("Withdraw" === title)
-						a(href="withdraw.html").is-active Withdraw
-					else
-						a(href="withdraw.html") Withdraw
-				li
-					if("Bank Accounts & Cards" === title)
-						a(href="withdraw-bank.html").is-active Bank Accounts & Cards
-					else
-						a(href="withdraw-bank.html") Bank Accounts & Cards
-				li
-					if("History" === title)
-						a(href="withdraw-history.html").is-active History
-					else
-						a(href="withdraw-history.html") History
+			if("Withdraw" === menuChecked)
+				ul.account-menu--sub
+					li
+						if("Withdraw" === title)
+							a(href="withdraw.html").is-active Withdraw
+						else
+							a(href="withdraw.html") Withdraw
+					li
+						if("Bank Accounts & Cards" === title)
+							a(href="withdraw-bank.html").is-active Bank Accounts & Cards
+						else
+							a(href="withdraw-bank.html") Bank Accounts & Cards
+					li
+						if("History" === title)
+							a(href="withdraw-history.html").is-active History
+						else
+							a(href="withdraw-history.html") History
 		li
-			a(href="#") My Account
+			if("My Account" === menuChecked)
+				a(href="myaccount.html").is-active My Account
+			else
+				a(href="myaccount.html") My Account
+			if("My Account" === menuChecked)
+				ul.account-menu--sub
+					li
+						if("My Account" === title)
+							a(href="myaccount.html").is-active My Account
+						else
+							a(href="myaccount.html") My Account
+					li
+						if("Documents" === title)
+							a(href="myaccount-documents.html").is-active Documents
+						else
+							a(href="myaccount-documents.html") Documents
 		li
 			a(href="#") Betting History
 		li

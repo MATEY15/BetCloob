@@ -3,8 +3,8 @@ extends layout.pug
 block variable
 	-var user = true
 	-var titleName = History
-	-var title = "Transaction History"
-	-var menuChecked = "Transaction History"
+	-var title = "History"
+	-var menuChecked = "Deposit"
 
 block header-login
 
@@ -17,23 +17,31 @@ block prepend main
 				include include/menu/account-menu
 			.main-container
 				.heading--main-container
-					h1.black-main--head= title
+					h1.black-main--head= menuChecked
 					.filter-button--wrapper#filter-button--wrapper
 						button.button.filter-button#filter-open Filter
 							span.filter-button__count 2
 						.filter-hidden
 							form(action="")
 								.filter-hidden--items
-									p.status-filter Type
+									p.status-filter Status
 									.checkout-status
 										.checkout-status--items
 											label.checkbox-static
+												input(type="checkbox", checked, required="").checkbox-static--input
+												p.checkbox-static--text Status 1
+										.checkout-status--items
+											label.checkbox-static
 												input(type="checkbox", required="").checkbox-static--input
-												p.checkbox-static--text Deposit
+												p.checkbox-static--text Status 2
+										.checkout-status--items
+											label.checkbox-static
+												input(type="checkbox", required="").checkbox-static--input
+												p.checkbox-static--text Status 3
 										.checkout-status--items
 											label.checkbox-static
 												input(type="checkbox", checked, required="").checkbox-static--input
-												p.checkbox-static--text Withdraw
+												p.checkbox-static--text Status 4
 
 								.filter-hidden--items
 									.filter-date

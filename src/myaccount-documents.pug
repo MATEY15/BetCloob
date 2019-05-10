@@ -1,0 +1,82 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "Documents"
+	-var menuChecked = "My Account"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				.heading--main-container
+					h1.black-main--head= menuChecked
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--head
+							.my-info--head-name
+								p ID Card
+							.my-info--head-button
+								button.button.small-button.button-rejected Rejected
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--head
+							.my-info--head-name
+								p ID Certificate
+							.my-info--head-button
+								button.button.small-button.button-verified Verified
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--head
+							.my-info--head-name
+								p Credit Card
+									span.desc (Front and Back)
+							.my-info--head-button
+								button.button.small-button.button-pending Pending
+
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--main
+							p.my-info--result Passport
+						.my-info--change
+							.file-input-wrapper
+								label(for="upload-file").button.button-gray Upload
+								input(id="upload-file" type="file" name="image")
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--main
+							p.my-info--result Credit Card
+						.my-info--change
+							.file-input-wrapper
+								label(for="upload-file").button.button-gray Upload
+								input(id="upload-file" type="file" name="image")
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--main
+							p.my-info--result Bank Statement
+						.my-info--change
+							.file-input-wrapper
+								label(for="upload-file").button.button-gray Upload
+								input(id="upload-file" type="file" name="image")
+
+				.account-info--black.small-offset
+					.my-information
+						.my-info--main
+							p.my-info--result Utility Bill
+						.my-info--change
+							.file-input-wrapper
+								label(for="upload-file").button.button-gray Upload
+								input(id="upload-file" type="file" name="image")

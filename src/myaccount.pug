@@ -1,0 +1,75 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "My Account"
+	-var menuChecked = "My Account"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				.heading--main-container
+					h1.black-main--head= title
+
+				.account-info--black
+					ul.list--info-account
+						li
+							span.name-option Balance
+							span.result-option £200.00
+						li
+							span.name-option Cash
+							span.result-option £200.00
+						li
+							span.name-option Bonus
+							span.result-option £20.00
+						li
+							span.name-option Withdrawable
+							span.result-option £200.00
+						li
+							span.name-option Bet Credits
+							span.result-option £20.00
+
+				.account-info--black
+					ul.list--info-account
+						li
+							span.name-option First Name
+							span.result-option John
+						li
+							span.name-option Last Name
+							span.result-option Doe
+						li
+							span.name-option Username
+							span.result-option johndoe
+						li
+							span.name-option Gender
+							span.result-option Male
+						li
+							span.name-option Date of Birth
+							span.result-option 11 March 1985
+
+					.account-wrap--button.text-right
+						button.button.button-gray Edit
+
+				.account-info--black
+					.my-information
+						.my-info--main
+							p.my-info--name Phone Number
+							p.my-info--result +44 535 345354342
+						.my-info--change
+							button.button.button-gray Change
+
+				.account-info--black
+					.my-information
+						.my-info--main
+							p.my-info--name Email
+							p.my-info--result example@mail.com
+						.my-info--change
+							button.button.button-gray Change

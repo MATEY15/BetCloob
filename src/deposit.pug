@@ -29,25 +29,28 @@ block prepend main
 								p *4242
 								span Credit Card
 					.main--credit-card
-						p.form-withdraw--name Amount you want to withdraw
-						form
-							.payment--select-price
-								label.radio--select-price
-									input(type="radio" name="radio" required="")
-									.text--select-price £50.00 
-								label.radio--select-price
-									input(type="radio" name="radio" required="")
-									.text--select-price £100.00 
-								label.radio--select-price
-									input(type="radio" checked name="radio" required="")
-									.text--select-price £200.00 
+						.wrapper-show--animate.is-show
+							form
+								.payment--select-price
+									label.radio--select-price
+										input(type="radio" name="radio" required="")
+										.text--select-price £50.00 
+									label.radio--select-price
+										input(type="radio" name="radio" required="")
+										.text--select-price £100.00 
+									label.radio--select-price
+										input(type="radio" checked name="radio" required="")
+										.text--select-price £200.00 
 
-							.form-withdraw--fill
-								span.icon-many £
-								input(value="200").input-black.text-center
-							p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
-								br
-								| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
-								br
-								| winnings made from them. Do you wish to continue?
-							button.popup-button.button Withdraw £200.00
+								.label-payment--fill
+									span.icon-many £
+									input(value="200").input-black.text-center
+								.label-payment--fill
+									label.default-label Deposit Bonus Code
+									input.input-black
+								.label-payment--fill
+									label.checkbox-static
+										input(type="checkbox", required="").checkbox-static--input
+										p.checkbox-static--text I agree with the 
+											a(href="terms-conditions.html") terms and conditions
+								button.popup-button.button Add £200.00 to my account

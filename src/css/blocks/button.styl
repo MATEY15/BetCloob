@@ -10,6 +10,7 @@
 	font-size 14px
 	ls(-0.1px)
 	text-decoration none
+	cursor pointer
 	background: cBlackD
 	border-radius 6px
 	trn(.25s)
@@ -88,3 +89,19 @@
 	c cBlackL
 	&:hover
 		background cYellowL
+
+// Small Button
+
+.small-button
+	height 24px
+	padding 5px
+	font-size 11px
+	&.button-rejected
+		c #ff3b30
+		background: #3a1f1e
+	&.button-verified
+		c cBlackL
+		background: cYellow
+	&.button-pending
+		background: cBlackL
+		c cYellow

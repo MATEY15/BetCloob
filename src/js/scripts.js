@@ -3,6 +3,7 @@
 //= select.js
 //= select2.full.js
 //= jquery-ui.js
+//= jquery.payment.min.js
 
 // window.onload = function(){
 //   // $("body").toggleClass('opacity');
@@ -20,6 +21,7 @@ var filterDate = function() {
 		minDate: minDate,
 	}).val();
 	$(".datapicker").attr('autocomplete', 'off');
+	$('.cc-number').formatCardNumber();
 };
 
 
@@ -114,6 +116,48 @@ var selectNew = function() {
   $(".select-phone").select2('data', { id:"elementID", text: "Hello!"});
 };
 
+var cardDrop = function() {
+	var dropContainer = $('.credit-card--drop');
+	dropContainer.find('.head--credit-card').on('click', function() {
+		$(this).next('.main--credit-card').slideToggle(400);
+		$(this).toggleClass('is-active');
+		$(this).next('.main--credit-card').find('.wrapper-show--animate').toggleClass('is-show');
+	});
+};
+
+var countCode = function() {
+	function startTimer(duration, display) {
+		var timer = duration, minutes, seconds;
+		setInterval(function () {
+			minutes = parseInt(timer / 60, 10)
+			seconds = parseInt(timer % 60, 10);
+			minutes = minutes < 10 ? "0" + minutes : minutes;
+			seconds = seconds < 10 ? "0" + seconds : seconds;
+			display.textContent = minutes + ":" + seconds;
+
+			if (--timer < 0) {
+				timer = duration;
+			}
+		}, 1000);
+	}
+
+	var fiveMinutes = 60 * 1,
+	display = document.querySelector('#time');
+	
+
+	$('.resend-code').on('click', function(e){
+		startTimer(fiveMinutes, display);
+		e.preventDefault();
+		$('.resend-time').removeClass('hidden');
+	});
+	
+};
+// $('.resend-code').on('click', function(){
+// 	countCode()
+// 	// e.preventDefault();
+// 	$('.resend-time').removeClass('hidden');
+// });
+
 /* Popup Window */
 
 $(".popup").magnificPopup({
@@ -134,3 +178,6 @@ dropMenuUser();
 filterOpen();
 selectNew();
 filterDate();
+cardDrop();
+
+// countCode();

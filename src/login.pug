@@ -11,30 +11,121 @@ block header-login
 block prepend main
 	+b.MAIN.section-main
 		.container
-			h3.heading-default.text-center Open popup window
+			section.black-main
+				.left-sidebar
+					include include/menu/account-menu
+				.main-container
+					.heading--main-container
+						h1.black-main--head Open popup window
 
-			ul.default-list.link-popup
-				li
-					a(href="#popup-login").popup Login
-				li
-					a(href="#reset-password").popup Reset Password
-				li
-					a(href="#name-email").popup Forgot username or email?
-				li
-					a(href="#forgot-password").popup Forgot password?
-				li
-					a(href="#popup-send").popup Message Sent Message
-				li
-					a(href="#popup-pass-reset").popup Password Reset Message
-				li
-					a(href="#popup-pass-success").popup Password Successfully Message
+					ul.default-list.link-popup
+						li
+							a(href="#popup-login").popup Login
+						li
+							a(href="#reset-password").popup Reset Password
+						li
+							a(href="#name-email").popup Forgot username or email?
+						li
+							a(href="#forgot-password").popup Forgot password?
+						li
+							a(href="#popup-send").popup Message Sent Message
+						li
+							a(href="#popup-pass-reset").popup Password Reset Message
+						li
+							a(href="#popup-pass-success").popup Password Successfully Message
 
-				select.select-phone.select-black
-					option(value="") +1
-					option(value="") +2
-					option(value="") +44
-					option(value="") +33
+						select.select-phone.select-black
+							option(value="") +1
+							option(value="") +2
+							option(value="") +44
+							option(value="") +33
 
-				label.checkbox-static
-					input(type="checkbox", required="").checkbox-static--input
-					p.checkbox-static--text Remember Me
+						.label-payment--fill
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text Remember Me
+
+						.label-payment--fill
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text I agree with the 
+									a(href="terms-conditions.html") terms and conditions
+
+						.item--input-label
+							.item--input
+								input(id="verification-code").valid-error
+								span.error-message Verification code is invalid or expired
+
+						.credit-card--drop
+							span.arrow-default
+							.head--credit-card
+								.credit-card--name
+									p Payment Method
+								.payment-card
+									img(src="img/credit-card--mc.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							.main--credit-card.hidden
+								.wrapper-show--animate
+									form
+										.payment--select-price
+											label.radio--select-price
+												input(type="radio" name="radio" required="")
+												.text--select-price £50.00 
+											label.radio--select-price
+												input(type="radio" name="radio" required="")
+												.text--select-price £100.00 
+											label.radio--select-price
+												input(type="radio" checked name="radio" required="")
+												.text--select-price £200.00 
+
+										.label-payment--fill
+											span.icon-many £
+											input(value="200").input-black.text-center
+										.label-payment--fill
+											label.default-label Deposit Bonus Code
+											input.input-black
+										.label-payment--fill
+											label.checkbox-static
+												input(type="checkbox", required="").checkbox-static--input
+												p.checkbox-static--text I agree with the 
+													a(href="terms-conditions.html") terms and conditions
+										button.popup-button.button Add £200.00 to my account
+
+						.credit-card--drop
+							span.arrow-default
+							.head--credit-card
+								.credit-card--name
+									p Payment Method
+								.payment-card
+									img(src="img/credit-card--mc.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							.main--credit-card
+								.wrapper-show--animate.is-show
+									form
+										.payment--select-price
+											label.radio--select-price
+												input(type="radio" name="radio" required="")
+												.text--select-price £50.00 
+											label.radio--select-price
+												input(type="radio" name="radio" required="")
+												.text--select-price £100.00 
+											label.radio--select-price
+												input(type="radio" checked name="radio" required="")
+												.text--select-price £200.00 
+
+										.label-payment--fill
+											span.icon-many £
+											input(value="200").input-black.text-center
+										.label-payment--fill
+											label.default-label Deposit Bonus Code
+											input.input-black
+										.label-payment--fill
+											label.checkbox-static
+												input(type="checkbox", required="").checkbox-static--input
+												p.checkbox-static--text I agree with the 
+													a(href="terms-conditions.html") terms and conditions
+										button.popup-button.button Add £200.00 to my account
