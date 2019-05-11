@@ -24,15 +24,16 @@ var filterDate = function() {
 	$('.cc-number').formatCardNumber();
 };
 
-
-function heightFooter(){
-  var heightFoot = $('.footer').outerHeight();
-  $('body').css({ 'padding-bottom': heightFoot});
-}
-heightFooter()
-$( window ).resize(function() {
-  heightFooter()
-});
+var footerHeight = function() {
+	function heightFooter(){
+		var heightFoot = $('.footer').outerHeight();
+		$('body').css({ 'padding-bottom': heightFoot});
+	}
+	heightFooter()
+	$( window ).resize(function() {
+		heightFooter()
+	});
+};
 
 $(".burger-menu").on("click", function(e) {
 	e.preventDefault(); 
@@ -68,6 +69,20 @@ var checkInput = function(){
 	$('#cancel').on('click', function() {
 		$(this).removeClass('show-cancel');
 		$('#search-input').val('');
+	});
+};
+
+var checkInputHelp = function(){
+	$('.blur-input').on("input", function() {
+		if ($(this).val()!=''){
+			$('.cancel-default').addClass('show-cancel');
+		} else {
+			$('.cancel-default').removeClass('show-cancel');
+		}
+	});
+	$('.cancel-default').on('click', function() {
+		$(this).removeClass('show-cancel');
+		$('.blur-input').val('');
 	});
 };
 
@@ -172,7 +187,9 @@ $('#popup-close').on('click', function(e) {
 
 /* Popup Window End */
 
+footerHeight();
 checkInput();
+checkInputHelp();
 loadBalanse();
 dropMenuUser();
 filterOpen();

@@ -20,30 +20,32 @@ block prepend main
 					h1.black-main--head= menuChecked
 
 				.account-info--black.small-offset
-					.my-information
-						.my-info--head
-							.my-info--head-name
-								p ID Card
-							.my-info--head-button
-								button.button.small-button.button-rejected Rejected
+					.my-info--head
+						.my-info--head-name
+							p ID Card
+						.my-info--head-button
+							button.button.small-button.button-rejected Rejected
+					.upload-file--wrapper
+						.upload-file
+							.upload-file--name
+								img(src="img/file-icon.svg", alt="")
+								p ID Card.png
+							button.delete-file
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+						.upload-message.text-center
+							p Your Uploaded ID document is obstructed or does not have all 4 edges visible. Please ensure the entire ID document is clear and visible for the best results.
 
 				.account-info--black.small-offset
-					.my-information
-						.my-info--head
-							.my-info--head-name
-								p ID Certificate
-							.my-info--head-button
-								button.button.small-button.button-verified Verified
-
-				.account-info--black.small-offset
-					.my-information
-						.my-info--head
-							.my-info--head-name
-								p Credit Card
-									span.desc (Front and Back)
-							.my-info--head-button
-								button.button.small-button.button-pending Pending
-
+					.my-info--head
+						.my-info--head-name
+							p ID Certificate
+						.my-info--head-button
+							button.button.small-button.button-verified Verified
+					.upload-file--wrapper
+						.upload-file
+							.upload-file--name
+								img(src="img/file-icon.svg", alt="")
+								p ID Certificate.png
 
 				.account-info--black.small-offset
 					.my-information
@@ -53,6 +55,30 @@ block prepend main
 							.file-input-wrapper
 								label(for="upload-file").button.button-gray Upload
 								input(id="upload-file" type="file" name="image")
+
+				.account-info--black.small-offset
+					.my-info--head
+						.my-info--head-name
+							p Credit Card
+								span.desc (Front and Back)
+						.my-info--head-button
+							button.button.small-button.button-pending Pending
+					.upload-file--wrapper
+						.upload-file
+							.upload-file--name
+								img(src="img/file-icon.svg", alt="")
+								p Front.png
+							button.delete-file
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+						.upload-file
+							.upload-file--name
+								img(src="img/file-icon.svg", alt="")
+								p Front.png
+							.load-progress
+								span(style="width:30%;")
+							button.delete-file
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+
 
 				.account-info--black.small-offset
 					.my-information

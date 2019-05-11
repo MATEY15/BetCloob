@@ -1,0 +1,34 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Help
+	-var title = "Login Problems"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main--default
+			.login-problems
+				a(href="#").link-back.text-back
+					span Back
+				.height-36
+				h1.black-main--head Login Problems
+				.height-50
+				.login-problems--main
+					.result-def--item
+						a(href="login-problems-post.html").result-name What can I bet on/play?
+						p.result-desc Access to exclusive points and bonus bet offers from Betcloob
+					.result-def--item
+						a(href="login-problems-post.html").result-name How do I place a bet on betcloob?
+						p.result-desc Access to exclusive points and bonus bet offers from Betcloob and bonus bet offers and other…
+					.result-def--item
+						a(href="login-problems-post.html").result-name How do I withdraw my winnings?
+						p.result-desc Access to exclusive points and bonus bet offers from Betcloob
+					.result-def--item
+						a(href="login-problems-post.html").result-name Why are my winnings not reflecting in my account?
+						p.result-desc Access to exclusive points and bonus bet offers from Betcloob and bonus bet offers and other…
+				

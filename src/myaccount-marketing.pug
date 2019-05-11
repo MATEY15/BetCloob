@@ -1,0 +1,70 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "Marketing Preferences"
+	-var menuChecked = "My Account"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main
+			.left-sidebar
+				include include/menu/account-menu
+			.main-container
+				.heading--main-container
+					h1.black-main--head= menuChecked
+
+				.account-info--black.small-offset
+					.my-information--checked
+						.info-checked
+							p.checked--name Betcloob Exclusive
+							p.checked--result Access to exclusive points and bonus bet offers from Betcloob
+						.my-info--change
+							label.checkbox-default
+								input(type="checkbox" checked)
+								.checkbox__text.noselect
+
+				.account-info--black.small-offset
+					.my-information--checked
+						.info-checked
+							p.checked--name Betcloob Rewards
+							p.checked--result Access to exclusive points and bonus bet offers from Betcloob
+						.my-info--change
+							label.checkbox-default
+								input(type="checkbox")
+								.checkbox__text.noselect
+
+				.account-info--black.small-offset
+					.my-information--checked
+						.info-checked
+							p.checked--name Other Partners
+							p.checked--result Access to exclusive points and bonus bet offers from Betcloob
+						.my-info--change
+							label.checkbox-default
+								input(type="checkbox" checked)
+								.checkbox__text.noselect
+
+				.account-info--black.small-offset
+					.my-information--checked
+						.info-checked
+							p.checked--name Market Research
+							p.checked--result Access to exclusive points and bonus bet offers from Betcloob
+						.my-info--change
+							label.checkbox-default
+								input(type="checkbox")
+								.checkbox__text.noselect
+
+				.account-info--black.small-offset
+					.my-information--checked
+						.info-checked
+							p.checked--name Tipping
+							p.checked--result Access to exclusive points and bonus bet offers from Betcloob
+						.my-info--change
+							label.checkbox-default
+								input(type="checkbox" checked)
+								.checkbox__text.noselect

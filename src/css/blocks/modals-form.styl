@@ -195,6 +195,8 @@
 
 .item--input-label
 	margin-bottom 26px
+	&.small-offset
+		margin-bottom 16px
 	
 	label
 		font-size 14px
@@ -215,7 +217,8 @@
 		justify-content space-between
 		margin-bottom 16px
 	.item--input
-		input
+		input,
+		textarea
 			width 100%
 			height 56px
 			brr(6px)
@@ -227,6 +230,11 @@
 			ls(-0.1px)
 			&.valid-error
 				border 1px solid rgba(255, 59, 48, 0.4)
+		textarea
+			min-height 136px
+			height auto
+			resize: none
+			padding 20px
 
 .captcha--wrapper
 	display flex
@@ -258,7 +266,8 @@
 
 // Popup Password Reset
 
-.popup-pass-reset
+.popup-pass-reset,
+.send-guest
 	padding-top 95px
 	padding-bottom 64px
 	.heading-default
@@ -269,7 +278,8 @@
 		ffa(fR)
 		ls(-0.1px)
 		c cGray
-		margin-bottom 45px
+		line-height 22px
+		margin-bottom 44px
 		a
 			font-size 14px
 			ffa(fR)
@@ -361,6 +371,11 @@
 		trn(.25s)
 		&:hover
 			c cGray
+
+//- Contact Us
+.contact-guest
+	.upload-file--wrapper
+		margin-bottom 16px
 
 .main-form_input::-webkit-input-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 .main-form_input::-moz-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}

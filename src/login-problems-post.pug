@@ -1,0 +1,27 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Help
+	-var title = "Login Problems"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main--default
+			.login-problems
+				a(href="login-problems.html").link-back.text-back
+					span Login Problems
+				.height-36
+				h1.black-main--head How do I withdraw my winnings?
+				.height-50
+				.login-problems--post
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices blandit ex a dignissim. Morbi molestie, mauris at sagittis tempor, justo sapien fermentum purus, a pharetra tellus ante quis nisl. Aenean volutpat metus libero, vitae vestibulum risus consequat at. Nunc eget nisl nec ligula lobortis eleifend faucibus ac diam. Etiam hendrerit feugiat leo, id efficitur ipsum ornare a. Vestibulum a purus a sapien condimentum consectetur. Nam luctus aliquam nunc, ac tempus magna vestibulum ac. Nullam interdum dolor at ante interdum, quis luctus purus efficitur. Mauris vulputate dui et rutrum interdum. Nam quis ante a est pulvinar consectetur in faucibus felis. Nunc diam nisi, dictum eget risus quis, lacinia ullamcorper mauris. Cras dolor libero, maximus aliquet ipsum eget, laoreet placerat justo.
+
+					p Praesent nisi massa, iaculis eu est in, suscipit efficitur massa. Proin iaculis ornare sem, ut elementum sem lobortis ac. Phasellus a felis et orci placerat sodales aliquam eget neque. Pellentesque cursus lectus euismod, eleifend ante nec, fermentum massa. Sed non tellus et neque semper vestibulum. Sed nisl arcu, tincidunt sed faucibus ut, lacinia nec turpis. Vestibulum eros leo, tempor elementum erat id, mollis semper lorem. Mauris lacus erat, vestibulum in ornare a, bibendum at nisi. Duis accumsan enim quis nisi rhoncus lacinia. Nulla sed scelerisque metus. Etiam et massa eget justo consectetur pellentesque.
+
+					p Mauris tristique eros quis nunc accumsan aliquam. In hac habitasse platea dictumst. Vestibulum vel sagittis urna. In ac scelerisque libero. Cras et sapien sed enim aliquet convallis. Etiam tempor, purus sed auctor ullamcorper, lorem sapien egestas metus, sed pretium elit velit vehicula velit. Suspendisse vel euismod neque. Vivamus nulla est, condimentum eget magna vel, consectetur volutpat neque. Ut sed molestie ante, sed rutrum turpis. Sed imperdiet vehicula felis, sed condimentum mauris sagittis vitae. Suspendisse potenti. Quisque dictum, ligula a congue faucibus, risus odio auctor erat, sed lobortis tellus purus vitae ante. Duis eu leo sit amet ante gravida molestie ac eu neque.
+				
