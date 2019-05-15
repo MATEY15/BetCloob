@@ -60,7 +60,12 @@ block prepend main
 									.filter-buttons
 										button.button.send-button Apply Filters
 										button.reset Reset Filters
-					
+				
+				include include/menu/mobile-menu
+
+				.mobile-filter
+					a(href="#popup-filter--mobile").open-popup.button.filter-button.button-filter--mobile Filter
+
 				.table-history--wrapper
 					table.table-history
 						thead

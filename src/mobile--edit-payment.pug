@@ -1,0 +1,37 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "Deposit"
+	-var menuChecked = "Deposit"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			.edit-payment
+				a(href="deposit-bank.html").link-back
+				h3.heading-popup.mobile-name Edit Payment Method
+					.height-36
+					form
+						.item--input-label
+							.item--label
+								label(for="accoun-name") Account holder name
+							.item--input
+								input(id="accoun-name")
+						.item--input-label
+							.item--label
+								label(for="edit-card") 16 digit card number
+							.item--input
+								input(id="edit-card", value="3543 9328 2456 2388", name="credit-number", pattern="\d*", maxlength="19").plch-white.cc-number
+						.item--input-label
+							.item--label
+								label(for="edit-iban") IBAN
+							.item--input
+								input(id="edit-iban", value="DE89 3704 0044 0532 0130 00").plch-white
+						.item--input-label
+							button.popup-button.button Save

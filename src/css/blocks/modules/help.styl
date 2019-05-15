@@ -52,7 +52,8 @@
 	flex-wrap wrap
 	margin 0 -8px
 	.category-item
-		width 200px
+		max-width 200px
+		width calc(25% - 16px)
 		background: cBlackD
 		brr(6px)
 		margin 8px
@@ -100,6 +101,9 @@
 	brr(6px)
 	padding 26px 30px
 	margin-top 8px
+	trn(.25s)
+	&:hover
+		background: cGrayD
 	.result-name
 		fsR(14px)
 		line-height 20px

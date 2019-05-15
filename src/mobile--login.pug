@@ -1,0 +1,38 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Withdraw
+	-var title = "Deposit"
+	-var menuChecked = "Deposit"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			h3.heading-popup Login
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="login-user") Email or Username
+						a(href="#") Forgot?
+					.item--input
+						input(id="login-user")
+				.item--input-label
+					.item--label
+						label(for="login-password") Password
+						a(href="#") Forgot?
+					.item--input
+						input(id="login-password")
+				.item--input-label
+					label.checkbox-static
+						input(type="checkbox", required="").checkbox-static--input
+						p.checkbox-static--text Remember Me
+				.item--input-label
+					button.popup-button.button Login
+				.text-center.wraps-mobile--bottom
+					a(href="#").dont-account Don’t have an account?

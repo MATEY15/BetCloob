@@ -19,6 +19,8 @@ block prepend main
 				.heading--main-container
 					h1.black-main--head= title
 
+				include include/menu/mobile-menu
+
 				.account-info--black
 					ul.list--info-account
 						li
@@ -73,3 +75,7 @@ block prepend main
 							p.my-info--result example@mail.com
 						.my-info--change
 							button.button.button-gray Change
+
+				.mobile--marketing-preferences
+					a(href="myaccount-marketing.html").popup-button.button Marketing Preferences
+					a(href="#").change-link.default-link Change Password

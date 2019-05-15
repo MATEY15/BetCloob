@@ -1,0 +1,82 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Help
+	-var title = "Account being used on another device"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main--default
+
+			.active-tiket
+
+				.top-line--tiket
+					a(href="#").link-back.text-back
+						span Back
+
+				.status-ticket--wrapper
+					span.status-ticket Closed Ticket
+					span.status-ticket--date Oct 13 at 10:18 AM
+
+				h1.black-main--head= title
+
+				.tickets-chat
+					.tickets-chat--head
+						.icon-user
+							img(src="img/betcloob-user.svg", alt="User")
+						.message-tiket
+							p Betcloob Support
+							span.message-date Oct 13 at 10:18 AM
+					.tickets-chat--message
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices blandit ex a dignissim. Morbi molestie, mauris at sagittis tempor, justo sapien fermentum purus, a pharetra tellus ante quis nisl. Aenean volutpat metus libero, vitae vestibulum risus consequat at. Nunc eget nisl nec ligula lobortis eleifend faucibus ac diam. Etiam hendrerit feugiat leo, id efficitur ipsum ornare a. Vestibulum a purus a sapien condimentum consectetur. Nam luctus aliquam nunc, ac tempus magna vestibulum ac. Nullam interdum dolor at ante interdum, quis luctus purus efficitur. Mauris vulputate dui et rutrum interdum. Nam quis ante a est pulvinar consectetur in faucibus felis. Nunc diam nisi, dictum eget risus quis, lacinia ullamcorper mauris. Cras dolor libero, maximus aliquet ipsum eget, laoreet placerat justo.
+
+				.tickets-chat
+					.tickets-chat--head
+						.icon-user
+							img(src="img/user.svg", alt="User")
+						.message-tiket
+							p John Doe
+							span.message-date Oct 13 at 10:18 AM
+					.tickets-chat--message
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices blandit ex a dignissim. Morbi molestie, mauris at sagittis tempor, justo sapien fermentum purus, a pharetra tellus ante quis nisl. Aenean volutpat metus libero, vitae vestibulum risus consequat at. Nunc eget nisl nec ligula lobortis eleifend faucibus ac diam. Etiam hendrerit feugiat leo, id efficitur ipsum ornare a. Vestibulum a purus a sapien condimentum consectetur. Nam luctus aliquam nunc, ac tempus magna vestibulum ac. Nullam interdum dolor at ante interdum, quis luctus purus efficitur. Mauris vulputate dui et rutrum interdum. Nam quis ante a est pulvinar consectetur in faucibus felis. Nunc diam nisi, dictum eget risus quis, lacinia ullamcorper mauris. Cras dolor libero, maximus aliquet ipsum eget, laoreet placerat justo.
+
+					.file-message
+						a(href="#").file-load
+							img(src="img/file-icon.svg", alt="")
+							p File.png
+						a(href="#").file-load
+							img(src="img/file-icon.svg", alt="")
+							p File.png
+
+				.tickets-chat
+					.tickets-chat--head
+						.icon-user
+							img(src="img/betcloob-user.svg", alt="User")
+						.message-tiket
+							p Betcloob Support
+							span.message-date Oct 13 at 10:18 AM
+					.tickets-chat--message
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices blandit ex a dignissim. Morbi molestie, mauris at sagittis tempor, justo sapien fermentum purus, a pharetra tellus ante quis nisl. Aenean volutpat metus libero, vitae vestibulum risus consequat at. Nunc eget nisl nec ligula lobortis eleifend faucibus ac diam. Etiam hendrerit feugiat leo, id efficitur ipsum ornare a. Vestibulum a purus a sapien condimentum consectetur. Nam luctus aliquam nunc, ac tempus magna vestibulum ac. Nullam interdum dolor at ante interdum, quis luctus purus efficitur. Mauris vulputate dui et rutrum interdum. Nam quis ante a est pulvinar consectetur in faucibus felis. Nunc diam nisi, dictum eget risus quis, lacinia ullamcorper mauris. Cras dolor libero, maximus aliquet ipsum eget, laoreet placerat justo.
+
+				.tickets-chat
+					.tickets-chat--head
+						.icon-user
+							img(src="img/user.svg", alt="User")
+						.message-tiket
+							p John Doe
+							span.message-date Oct 13 at 10:18 AM
+					.tickets-chat--message
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices blandit ex a dignissim. Morbi molestie, mauris at sagittis tempor, justo sapien fermentum purus, a pharetra tellus ante quis nisl. Aenean volutpat metus libero, vitae vestibulum risus consequat at. Nunc eget nisl nec ligula lobortis eleifend faucibus ac diam. Etiam hendrerit feugiat leo, id efficitur ipsum ornare a. Vestibulum a purus a sapien condimentum consectetur. Nam luctus aliquam nunc, ac tempus magna vestibulum ac. Nullam interdum dolor at ante interdum, quis luctus purus efficitur. Mauris vulputate dui et rutrum interdum. Nam quis ante a est pulvinar consectetur in faucibus felis. Nunc diam nisi, dictum eget risus quis, lacinia ullamcorper mauris. Cras dolor libero, maximus aliquet ipsum eget, laoreet placerat justo.
+
+					.file-message
+						a(href="#").file-load
+							img(src="img/file-icon.svg", alt="")
+							p File.png
+						a(href="#").file-load
+							img(src="img/file-icon.svg", alt="")
+							p File.png

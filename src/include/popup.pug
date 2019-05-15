@@ -2,7 +2,8 @@
 
 	//- Withdraw Reciept
 	.popup-default.popup-reciept.default-offset.zoom-anim-dialog#popup-reciept
-		h3.heading-default Withdraw Reciept
+		h3.heading-default=title 
+			|  Reciept
 		.height-36
 		.wrapper--reciept-info
 			p.reciept-info Payment Method
@@ -39,6 +40,17 @@
 			a(href="#").button.cancel-button Yes,Cancel
 			a(href="#").button.cancel-button.gray-color No
 
+	//- Delete Payment method
+	.popup-default.popup--withdraw-cancel.default-offset.zoom-anim-dialog.message-status#delete-payments
+		.height-36
+		h3.heading-default.text-center 
+			| Are you sure you want 
+			br
+			| to delete this payment method?
+		.wrap--send-button.text-center
+			a(href="#").button.cancel-button Yes,Cancel
+			a(href="#").button.cancel-button.gray-color No
+
 	//- Password has been changed successfully
 	.popup-default.popup-send.zoom-anim-dialog#popup-pass-success
 		h3.heading-default.text-center Password has been changed successfully
@@ -46,7 +58,7 @@
 			a(href="#").button.send-button Get Started
 
 	//- New payment method has been successfully added
-	.popup-default.popup-send.zoom-anim-dialog#popup-payment-success
+	.popup-default.popup-send.zoom-anim-dialog.message-status#popup-payment-success
 		h3.heading-default.text-center New payment method has been successfully added
 		.wrap--send-button.text-center
 			a(href="#").button.send-button Continue
@@ -336,14 +348,37 @@
 				.item--label
 					label(for="edit-card") 16 digit card number
 				.item--input
-					input(id="edit-card", placeholder="3543 9328 2456 2388", name="credit-number", pattern="\d*", maxlength="19").plch-white.cc-number
+					input(id="edit-card", value="3543 9328 2456 2388", name="credit-number", pattern="\d*", maxlength="19").plch-white.cc-number
 			.item--input-label
 				.item--label
 					label(for="edit-iban") IBAN
 				.item--input
-					input(id="edit-iban", placeholder="DE89 3704 0044 0532 0130 00").plch-white
+					input(id="edit-iban", value="DE89 3704 0044 0532 0130 00").plch-white
 			.item--input-label
 				button.popup-button.button Save
+
+	//- New Payment Method
+	.popup-default.edit-payment.default-offset.zoom-anim-dialog.message-status#new-payment
+		h3.heading-popup New Payment Method
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="accoun-name") Account holder name
+				.item--input
+					input(id="accoun-name")
+			.item--input-label
+				.item--label
+					label(for="edit-card") 16 digit card number
+				.item--input
+					input(id="edit-card", name="credit-number", pattern="\d*", maxlength="19").plch-white.cc-number
+			.item--input-label
+				.item--label
+					label(for="edit-iban") IBAN
+				.item--input
+					input(id="edit-iban").plch-white
+			.item--input-label
+				button.popup-button.button Add New Payment Method
 
 	//- Change Email
 	.popup-default.new-password.default-offset.zoom-anim-dialog#new-password
@@ -559,20 +594,194 @@
 		.upload-file--wrapper
 			.upload-file
 				.upload-file--name
-					img(src="img/file-icon.svg", alt="")
-					p File.png
-				button.delete-file
-					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+					div
+						img(src="img/file-icon.svg", alt="")
+						p File.png
+					button.delete-file
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
 			.upload-file
 				.upload-file--name
-					img(src="img/file-icon.svg", alt="")
-					p Uploading file.png
-				button.delete-file
-					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
+					div
+						img(src="img/file-icon.svg", alt="")
+						p Uploading file.png
+					button.delete-file
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g><g><path d="M4.525 3.818a.5.5 0 0 1 .707 0L7 5.586l1.768-1.768a.5.5 0 0 1 .707 0l.707.707a.5.5 0 0 1 0 .707L8.414 7l1.768 1.768a.5.5 0 0 1 0 .707l-.707.707a.5.5 0 0 1-.707 0L7 8.414l-1.768 1.768a.5.5 0 0 1-.707 0l-.707-.707a.5.5 0 0 1 0-.707L5.586 7 3.818 5.232a.5.5 0 0 1 0-.707zM7 14A7 7 0 1 0 7 0a7 7 0 0 0 0 14z"/></g></g></svg>
 				.load-progress
 					span(style="width:30%;")
 		.item--input-label.small-offset
-			button.popup-button.button.attach-file Attach a File
-				<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path fill="#161516" d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+			.file-input-wrapper
+				label(for="upload-file").button.popup-button.attach-file Attach a File
+					<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path fill="#161516" d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+				input(id="upload-file" type="file" name="image")
 		.item--input-label.small-offset
 			button.popup-button.button Send
+
+	//- New Ticket
+	.popup-default.new-ticket.default-offset.zoom-anim-dialog#new-ticket
+		h3.heading-popup New Ticket
+		.height-36
+		.item--input-label
+			.item--label
+				label(for="contact-subject") Subject
+			.item--input
+				input(id="contact-subject")
+		.item--input-label.small-offset
+			.item--label
+				label(for="text-message") Message
+			.item--input
+				textarea(id="text-message")
+		.item--input-label.small-offset
+			.file-input-wrapper
+				label(for="upload-file").button.popup-button.attach-file Attach a File
+					<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path fill="#161516" d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+				input(id="upload-file" type="file" name="image")
+		.item--input-label.small-offset
+			button.popup-button.button Send
+
+	//- Are you sure you want to close this ticket?
+	.popup-default.popup--withdraw-cancel.default-offset.zoom-anim-dialog#ticket-cancel
+		.height-36
+		h3.heading-default.text-center 
+			| Are you sure you want
+			br
+			| to close this ticket?
+		.wrap--send-button.text-center
+			a(href="#").button.cancel-button Yes,Cancel
+			a(href="#").button.cancel-button.gray-color No
+
+	//- New ticket  has been created
+	.popup-default.popup-pass-reset.zoom-anim-dialog#create-ticket
+		h3.heading-default.text-center New ticket  has been created
+		p.popup--text-info We will respond to you within 24 hours
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Got It
+
+	//- Withdraw Successfully
+	.popup-default.popup--withdraw-success.default-offset.zoom-anim-dialog#ticket-success
+		.height-36
+		h3.heading-default.text-center Ticket has been successfully closed
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Got It
+
+//- Filter History
+.custom-popup#popup-filter--mobile
+	.overlay-popup
+	.popup-default.mobile-popup--style
+		span.custom-close
+
+		h3.mobile-head Filter
+		form(action="")
+
+			.filter-hidden--mobile
+				.filter-hidden--items
+					p.status-filter Status
+					.checkout-status
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", checked, required="").checkbox-static--input
+								p.checkbox-static--text Status 1
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text Status 2
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text Status 3
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", checked, required="").checkbox-static--input
+								p.checkbox-static--text Status 4
+				.filter-hidden--items
+					.filter-date
+						.filter-date--items
+							.item--label
+								label(for="start-date--mob").default-label Start Date
+							.item--input
+								input(id="start-date--mob", type="text").filter-date.datapicker.input-black
+						.filter-date--items
+							.item--label
+								label(for="end-date--mob").default-label End Date
+							.item--input
+								input(id="end-date--mob", type="text").filter-date.datapicker.input-black
+
+			.filter-hidden--items.filter-buttons--mobile
+				.filter-buttons
+					button.button.send-button Apply Filters
+					button.reset.reset-mobile Reset Filters
+
+//- Filter History
+.custom-popup#popup-trnfilter--mobile
+	.overlay-popup
+	.popup-default.mobile-popup--style
+		span.custom-close
+
+		h3.mobile-head Filter
+		form(action="")
+
+			.filter-hidden--mobile
+				.filter-hidden--items
+					p.status-filter Status
+					.checkout-status
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", checked, required="").checkbox-static--input
+								p.checkbox-static--text Deposit
+						.checkout-status--items
+							label.checkbox-static
+								input(type="checkbox", required="").checkbox-static--input
+								p.checkbox-static--text Withdraw
+
+				.filter-hidden--items
+					.filter-date
+						.filter-date--items
+							.item--label
+								label(for="start-date--mob").default-label Start Date
+							.item--input
+								input(id="start-date--mob", type="text").filter-date.datapicker.input-black
+						.filter-date--items
+							.item--label
+								label(for="end-date--mob").default-label End Date
+							.item--input
+								input(id="end-date--mob", type="text").filter-date.datapicker.input-black
+
+			.filter-hidden--items.filter-buttons--mobile
+				.filter-buttons
+					button.button.send-button Apply Filters
+					button.reset.reset-mobile Reset Filters
+
+//- Choose Popup
+.add-new--payment-mobile#choose-payment
+	span.custom-close
+	.heading-choose
+		h3.head-choose Choose Payment Method
+	a(href="#").add-payment--items
+		span.arrow-default
+		.payment-card
+			img(src="img/credit-card--mc.svg", alt="")
+			.payment-card--info
+				p *4242
+				span Credit Card
+	a(href="#").add-payment--items
+		span.arrow-default
+		.payment-card
+			img(src="img/credit-card--visa.svg", alt="")
+			.payment-card--info
+				p *4242
+				span Credit Card
+	a(href="#").add-payment--items
+		span.arrow-default
+		.payment-card
+			img(src="img/credit-card--paypal.svg", alt="")
+			.payment-card--info
+				p *4242
+				span Credit Card
+	a(href="#").add-payment--items
+		span.arrow-default
+		.payment-card
+			img(src="img/credit-card--ame.svg", alt="")
+			.payment-card--info
+				p *4242
+				span Credit Card
+	.button-wrapper--mobile
+		button.button.popup-button Add New Payment Method

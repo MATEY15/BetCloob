@@ -19,6 +19,8 @@ block prepend main
 				.heading--main-container
 					h1.black-main--head Withdraw
 
+				include include/menu/mobile-menu
+
 				.credit-card--edit-wrapper
 
 					.credit-card--edit
@@ -29,8 +31,8 @@ block prepend main
 									p *4242
 									span Credit Card
 							.payment-card--button
-								button.button.button-gray Edit
-								button.button.button-black Delete
+								a(href="#edit-payment" data-mobilelink="mobile--edit-payment.html").popup.button.button-gray.link-data Edit
+								a(href="#delete-payments").popup.button.button-black Delete
 
 					.credit-card--edit
 						.payment-card
@@ -40,8 +42,8 @@ block prepend main
 									p *4242
 									span Credit Card
 							.payment-card--button
-								button.button.button-gray Edit
-								button.button.button-black Delete
+								a(href="#edit-payment" data-mobilelink="mobile--edit-payment.html").popup.button.button-gray.link-data Edit
+								a(href="#delete-payments").popup.button.button-black Delete
 
 					.credit-card--edit
 						.payment-card
@@ -51,16 +53,16 @@ block prepend main
 									p *4242
 									span Credit Card
 							.payment-card--button
-								button.button.button-gray Edit
-								button.button.button-black Delete
+								a(href="#edit-payment" data-mobilelink="mobile--edit-payment.html").popup.button.button-gray.link-data Edit
+								a(href="#delete-payments").popup.button.button-black Delete
 
 				.add-card
-					button.popup-button.button Add New Payment Method
+					a(href="#new-payment" data-mobilelink="mobile--new-payment.html").popup.popup-button.button.link-data Add New Payment Method
 
 
 				.credit-card--drop
 					span.arrow-default
-					.head--credit-card
+					.head--credit-card.close-status
 						.credit-card--name
 							p Payment Method
 						.payment-card
@@ -68,16 +70,3 @@ block prepend main
 							.payment-card--info
 								p *4242
 								span Credit Card
-					.main--credit-card
-						.wrapper-show--animate.is-show
-							p.form-withdraw--name Amount you want to withdraw
-							form
-								.form-withdraw--fill
-									span.icon-many £
-									input(value="200").input-black.text-center
-								p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
-									br
-									| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
-									br
-									| winnings made from them. Do you wish to continue?
-								button.popup-button.button Withdraw £200.00

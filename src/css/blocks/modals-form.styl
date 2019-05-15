@@ -9,7 +9,9 @@
 	// filter: blur(5px)
 	// filter: url(../img/blur.svg#blur)
 
-.mfp-close
+.mfp-close,
+.custom-close
+	position absolute
 	top 40px !important
 	right 40px !important
 	width 16px
@@ -17,6 +19,7 @@
 	padding 0 !important
 	opacity 1
 	font-size 0
+	cursor pointer
 	&:before,
 	&:after
 		position absolute
@@ -115,7 +118,7 @@
 // Standart offset
 
 .default-offset
-	padding 64px 64px 52px
+	padding 64px 62px 52px
 
 // Text style
 
@@ -157,15 +160,15 @@
 	.heading-popup
 		margin-bottom 36px
 	
-	.dont-account
-		display inline-block
-		margin-top 16px
-		font-size 14px
-		ffa(fSB)
-		c cWhite
-		ls(-0.1px)
-		text-align center
-		text-decoration none
+.dont-account
+	display inline-block
+	margin-top 16px
+	font-size 14px
+	ffa(fSB)
+	c cWhite
+	ls(-0.1px)
+	text-align center
+	text-decoration none
 
 .heading-popup
 	font-size 27px
@@ -323,6 +326,7 @@
 		flex-direction row
 		justify-content space-between
 		c cGray
+		font-size 14px
 		&:not(:last-child)
 			margin-bottom 37px
 		span
@@ -376,6 +380,66 @@
 .contact-guest
 	.upload-file--wrapper
 		margin-bottom 16px
+
+// Popup Mobile
+
+body.no-scroll
+	overflow hidden
+	height 100vh
+
+.overlay-popup 
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background: rgba(22, 21, 22, 0.5)
+	opacity 0
+	visibility hidden
+	trn(.25s)
+	&.is-active
+		opacity 1
+		visibility visible
+		z-index 900
+
+.custom-popup
+	position absolute
+	top 0
+	left 50%
+	tt(-50%, 0)
+	display block
+	width 100%
+	height 100vh
+	opacity 0
+	visibility hidden
+	z-index 1000
+	trn(.25s)
+	&.open_window
+		opacity 1
+		visibility visible
+		.popup-default
+			transform translate(-50%, -50%) scale(1)
+	.popup-default
+		position absolute
+		top 50%
+		left 50%
+		display block
+		width 100%
+		background: cBlackL
+		brr(10px)
+		max-width 592px
+		padding: 64px 62px 52px
+		margin 0
+		z-index 1000
+		trn(.15s)
+		transform translate(-50%, -50%) scale(.8)
+		.mobile-head
+			font-size: 27px
+			ffa(fEB)
+			letter-spacing: -0.21px
+			line-height: 32px
+			c cWhite
+			text-align center
 
 .main-form_input::-webkit-input-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 .main-form_input::-moz-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}

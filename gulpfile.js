@@ -134,7 +134,7 @@ gulp.task('js', function() {
     gulp.src(path.src.js)
         .pipe(plumber())
         .pipe(rigger())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({
             stream: true

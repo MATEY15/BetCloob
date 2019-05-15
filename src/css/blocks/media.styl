@@ -1,0 +1,266 @@
+LG = 980px
+SM = 720px
+SM480 = 480px
+SM375 = 375px
+SM360 = 360px
+SM320 = 320px
+
+@media screen and (max-width: LG)
+	
+	.mobile-page--menu
+		display block
+	
+	.left-sidebar
+		display none
+
+@media screen and (max-width: SM)
+
+	html
+		margin-right 0 !important
+
+	body
+		padding-bottom 0 !important
+	
+	.custom-popup
+		position fixed
+		overflow-y scroll
+	
+	.drop--menu-user
+		top 100%
+		display none
+		&.is-active
+			display block
+	
+	.header
+		border-bottom: 1px solid #313031
+	
+	.top-line
+		margin-bottom 0
+	
+	.footer
+		display none
+	
+	.black-main
+		margin 0
+		background: #161516
+		padding 24px
+		border-bottom 0
+		.main-container
+			margin-left 0
+	
+	.heading--main-container
+		margin: 5px 0 20px
+		.black-main--head
+			font-size 27px
+	.credit-card--drop
+		brr(6px)
+		.arrow-default
+			top 86px
+			right 28px
+		.head--credit-card
+			padding 26px 24px
+			border-radius: 6px 6px 0 0
+			text-decoration none
+			&.close-status
+				brr(6px)
+			.credit-card--name
+				margin-bottom 30px
+		.main--credit-card
+			padding 0
+			background-color transparent
+			.credit-card--mobile-wrapper
+				padding: 32px 24px 2px
+				background: cBlackD
+				border-radius: 0 0 6px 6px
+				margin-bottom 24px
+	
+	.credit-card--edit
+		padding 32px 24px
+	
+	.black-main
+		display block
+	
+	.table-history--wrapper
+		width calc(100% + 24px)
+		overflow-x scroll
+		.table-history
+			width 624px
+	
+	.main--credit-card .form-withdraw--desc
+		br
+			display none
+	
+	.account-info--black
+		padding 20px 24px
+		brr(6px)
+		.account-wrap--button
+			margin-top 27px
+			margin-bottom 12px
+	
+	.account-info--black
+		.my-information
+			padding 8px 0
+	
+	.mobile--marketing-preferences
+		display block
+	
+	.account-info--black.small-offset
+		position relative
+		padding 24px 16px 16px
+		.checked--name
+			padding-right 60px
+		.my-info--change
+			position absolute
+			right 24px
+			top 24px
+			min-width 40px
+	
+	.mobile-back
+		display block
+	
+	// Popup
+	
+	.mobile-body
+		overflow hidden
+	.mfp-wrap
+		top 0 !important
+		position fixed !important
+		overflow auto
+	.mfp-bg
+		position fixed !important
+		height 100% !important
+	.mfp-container
+		position fixed !important
+		top 0 !important
+		padding 0
+	.mfp-content
+		height 100%
+	.custom-close,
+	.mfp-close
+		top 26px !important
+		right 26px !important
+	
+	.popup-default
+		max-width 100%
+		height 100%
+		margin 0 auto
+		brr(0)
+		overflow-y scroll
+		&.default-offset
+			padding: 70px 24px 52px
+	
+	.popup-reciept
+		.heading-default
+			margin-bottom 6px
+			text-align center
+	
+	.message-status
+		display flex
+		flex-direction column
+		align-items center
+		justify-content center
+		.wrap--send-button
+			position absolute
+			width 100%
+			bottom 24px
+	
+	.popup-default
+		.heading-default
+			line-height 34px
+			br
+				display none
+	
+	// Terms
+	
+	.black-main--big
+		margin 0
+		background: #161516
+		padding: 40px 24px 14px
+	
+	.terms-content
+		.mobile-offset--terms
+			display block
+		h1
+			font-size 27px
+			margin-bottom 26px
+		h4
+			font-size 18px
+		h6
+			font-size 14px
+		p,
+		a,
+		ul li
+			font-size 14px
+	
+	.item--input-label label
+		c cWhite
+	
+	.wraps-mobile--bottom
+		position absolute
+		bottom 36px
+		left 0
+		width 100%
+
+@media screen and (max-width: 540px)
+
+	.filter-button--wrapper
+		display none
+	
+	.mobile-filter
+		display block
+	
+	.custom-popup
+		&.open_window
+			.popup-default
+				top 0
+				transform translate(-50%, 0) scale(1)
+		.popup-default
+			min-height 600px
+			&.mobile-popup--style
+				padding 70px 24px 24px
+				brr(0)
+				height 100%
+				.mobile-head
+					margin-bottom 44px
+
+	.filter-hidden--mobile
+		border-radius: 6px
+		background-color: #242324
+		.filter-date.datapicker
+			background: #353435
+		.filter-hidden--items
+			padding: 20px 24px
+			&:not(:last-child)
+				border-bottom 1px solid #313031
+			&:last-child
+				padding: 20px 24px 32px
+	.filter-hidden--items.filter-buttons--mobile
+		padding 24px 0
+	.filter-buttons
+		padding 0
+		justify-content center
+		.send-button
+			width 100%
+	.reset.reset-mobile
+		position absolute
+		width 100%
+		text-align center
+		bottom 20px
+		left 0
+		margin-right 0
+
+@media screen and (max-width: SM480)
+	.mobile-page--menu li:not(:last-child)
+		margin-right 25px
+
+@media screen and (max-width: SM375)
+	.mobile-page--menu li:not(:last-child)
+		margin-right 20px
+
+@media screen and (max-width: SM320)
+	.mobile-page--menu li a
+		font-size 12px
+	
+	.my-info--head .my-info--head-name p .desc
+		padding-left 0
+		display block

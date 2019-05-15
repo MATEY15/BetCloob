@@ -1,5 +1,5 @@
 .top-info
-	@media screen and (max-width: 718px)
+	@media screen and (max-width: 720px)
 		display none
 
 .top-info--wrapper
@@ -151,14 +151,17 @@
 				opacity 0
 				visibility hidden
 				tt(0, -50%)
-				trn(.25s)
+				&:hover
+					span
+						background: cWhite
 				span
 					position absolute
 					top 6px
 					display block
 					width 16px
 					height 2px
-					background: cWhite
+					background: cGray
+					trn(.25s)
 					&:nth-child(1)
 						transform rotateZ(45deg)
 					&:nth-child(2)
@@ -274,8 +277,12 @@
 			opacity 0
 			visibility hidden
 			trn(.25s)
+			&:hover
+				svg
+					fill cWhite
 			&.show-cancel
 				opacity 1
 				visibility visible
 			svg
+				fill cGray
 				trn(.25s)

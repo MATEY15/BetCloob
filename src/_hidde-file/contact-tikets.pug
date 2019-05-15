@@ -1,0 +1,66 @@
+extends layout.pug
+
+block variable
+	-var user = true
+	-var titleName = Help
+	-var title = "Contact Us"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.black-main--default
+			.heading--main-container
+				h1.black-main--head= title
+				a(href="#").button.button-tiket New Ticket
+			.tiket-wrappe
+				.tiket-main
+					h6 Active Ticket
+					.tiket-main--item
+						.tiket-item--head
+							a(href="#").button.small-button.button-pending.new-tiket New Ticket
+							span.tiket-date Oct 13 at 10:18 AM
+							a(href="#").tiket-name Account being used on another device
+						.tiket-item--content
+							.icon-user
+								img(src="img/betcloob-user.svg", alt="User")
+							.message-tiket
+								p In these Terms, the expressions below shall have the meaning assigned to them in this clause, unless the context requires otherwise
+								span.message-date Oct 13 at 10:18 AM
+
+				.tiket-main
+					h6 Closed tickets
+					.tiket-main--item
+						.tiket-item--head
+							span.tiket-date Oct 13 at 10:18 AM
+							a(href="#").tiket-name Account being used on another device
+						.tiket-item--content
+							.icon-user
+								img(src="img/user.svg", alt="User")
+							.message-tiket
+								p In these Terms, the expressions below shall have the meaning assigned to them in this clause, unless the context requires otherwise
+								span.message-date Oct 13 at 10:18 AM
+
+					.tiket-main--item
+						.tiket-item--head
+							span.tiket-date Oct 13 at 10:18 AM
+							a(href="#").tiket-name Account being used on another device
+						.tiket-item--content
+							.icon-user
+								img(src="img/user.svg", alt="User")
+							.message-tiket
+								p In these Terms, the expressions below shall have the meaning assigned to them in this clause, unless the context requires otherwise
+								span.message-date Oct 13 at 10:18 AM
+
+					.tiket-main--item
+						.tiket-item--head
+							span.tiket-date Oct 13 at 10:18 AM
+							a(href="#").tiket-name Account being used on another device
+						.tiket-item--content
+							.icon-user
+								img(src="img/user.svg", alt="User")
+							.message-tiket
+								p In these Terms, the expressions below shall have the meaning assigned to them in this clause, unless the context requires otherwise
+								span.message-date Oct 13 at 10:18 AM

@@ -1,0 +1,47 @@
+nav.mobile-page--menu
+	ul
+		if("Deposit" === menuChecked)
+			li
+				if("Deposit" === title)
+					a(href="deposit.html").is-active Deposit
+				else
+					a(href="deposit.html") Deposit
+			li
+				if("Bank Accounts & Cards" === title)
+					a(href="deposit-bank.html").is-active Bank Accounts & Cards
+				else
+					a(href="deposit-bank.html") Bank Accounts & Cards
+			li
+				if("History" === title)
+					a(href="deposit-history.html").is-active History
+				else
+					a(href="deposit-history.html") History
+
+		if("Withdraw" === menuChecked)
+			li
+				if("Withdraw" === title)
+					a(href="withdraw.html").is-active Withdraw
+				else
+					a(href="withdraw.html") Withdraw
+			li
+				if("Bank Accounts & Cards" === title)
+					a(href="withdraw-bank.html").is-active Bank Accounts & Cards
+				else
+					a(href="withdraw-bank.html") Bank Accounts & Cards
+			li
+				if("History" === title)
+					a(href="withdraw-history.html").is-active History
+				else
+					a(href="withdraw-history.html") History
+
+		if("My Account" === menuChecked)
+			li
+				if("My Account" === title)
+					a(href="myaccount.html").is-active My Account
+				else
+					a(href="myaccount.html") My Account
+			li
+				if("Documents" === title)
+					a(href="myaccount-documents.html").is-active Documents
+				else
+					a(href="myaccount-documents.html") Documents

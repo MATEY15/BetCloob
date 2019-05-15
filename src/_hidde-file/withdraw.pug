@@ -18,6 +18,9 @@ block prepend main
 			.main-container
 				.heading--main-container
 					h1.black-main--head= title
+
+				include include/menu/mobile-menu
+
 				.credit-card--drop
 					span.arrow-default
 					.head--credit-card
@@ -28,16 +31,52 @@ block prepend main
 							.payment-card--info
 								p *4242
 								span Credit Card
+
+						.add-new--payment
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--mc.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--visa.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--paypal.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--ame.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add--payments-method
+								<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+								| Add New Payment Method
+
 					.main--credit-card
 						.wrapper-show--animate.is-show
-							p.form-withdraw--name Amount you want to withdraw
 							form
-								.form-withdraw--fill
-									span.icon-many £
-									input(value="200").input-black.text-center
-								p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
-									br
-									| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
-									br
-									| winnings made from them. Do you wish to continue?
-								button.popup-button.button Withdraw £200.00
+								.credit-card--mobile-wrapper
+									p.form-withdraw--name Amount you want to withdraw
+									.form-withdraw--fill
+										span.icon-many £
+										input(value="200").input-black.text-center
+									p.form-withdraw--desc.text-center If you continue with this withdraw ,any active bonus codes will be cancelled, and any
+										br
+										| locked bonus funds (bonuses will remaining playthrough) will be forfeited along with any 
+										br
+										| winnings made from them. Do you wish to continue?
+								
+								a(href="#popup-reciept").popup.popup-button.button Withdraw £200.00
