@@ -13,6 +13,7 @@ html
 	height 100%
 
 body
+	display block !important
 	position relative
 	overflow-x: hidden
 	min-width 320px
@@ -21,6 +22,12 @@ body
 
 button
 	cursor pointer
+
+input
+	box-shadow: none !important
+
+.no-flex--mobile
+	display block !important
 
 #overlayer
 	// width 100%
@@ -31,11 +38,18 @@ button
 	// z-index 11
 	// background cBlack
 
+.add-new--payment-mobile,
+.custom-popup
+	display block !important
+
 // Height
 .height-36
 	height 36px
 .height-50
 	height 50px
+
+.mobile-none
+	display block
 
 .align-right
 	float right
@@ -101,6 +115,9 @@ a
 	trn(.25s)
 	&:hover
 		c cYellowL
+
+img
+	max-width 100%
 
 .container
 	box-sizing border-box
@@ -292,7 +309,6 @@ a
 		position absolute
 		top 0
 		left 0
-		border-right 1px solid #222022
 	input
 		padding-left 104px !important
 

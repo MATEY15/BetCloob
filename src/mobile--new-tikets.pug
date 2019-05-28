@@ -1,0 +1,34 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "New ticket"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="contact-tikets.html").link-back
+			h3.heading-popup New Ticket
+			.height-36
+			.item--input-label
+				.item--label
+					label(for="contact-subject") Subject
+				.item--input
+					input(id="contact-subject")
+			.item--input-label.small-offset
+				.item--label
+					label(for="text-message") Message
+				.item--input
+					textarea(id="text-message")
+			.item--input-label.small-offset
+				.file-input-wrapper
+					label(for="upload-file").button.popup-button.attach-file Attach a File
+						<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path fill="#161516" d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+					input(id="upload-file" type="file" name="image")
+			.item--input-label.small-offset
+				a(href="#create-ticket").popup.popup-button.button Send

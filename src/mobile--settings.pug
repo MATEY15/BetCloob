@@ -1,0 +1,38 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "New ticket"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			h3.heading-default Settings
+			.height-36
+			.settings-wrapper
+				.settings-item
+					span.name--settings-item Odds Display
+					select.select-phone.select-black
+						option(value="") Fractional
+						option(value="") Fractional 1
+						option(value="") Fractional 2
+						option(value="") Fractional 3
+				.settings-item
+					span.name--settings-item Language
+					select.select-phone.select-black
+						option(value="") English
+						option(value="") Español
+						option(value="") Deutsch
+						option(value="") Français
+				.settings-item
+					span.name--settings-item Time Zone
+					select.select-phone.select-black
+						option(value="") GMT-4
+						option(value="") GMT-3
+						option(value="") GMT-2
+						option(value="") GMT-1

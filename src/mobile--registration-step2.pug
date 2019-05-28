@@ -1,0 +1,36 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			h3.heading-popup.heading-step Registration
+				snan.step-count Step 
+					span.cont-num 2 
+					| of 3
+			.height-36
+			form
+			.step-popup.registration-steps.step2
+				.item--input-label
+					.item--label
+						label(for="verification-code") Verification Code
+					.item--input
+						input(id="verification-code").valid-error
+						span.error-message Verification code is invalid or expired
+				.item--input-label
+					a(href="mobile--registration-step3.html").popup-button.button Enter Code
+				p.popup-text--gray.text-center.mobile-text--bottom
+					| Enter the 6-digit verification code sent to 
+					br
+					| +44 535 345354342
+				.link--popup-default.text-center.wraps-mobile--bottom
+					a(href="#").default-link.resend-code Resend Code
+					.resend-time wait 
+						span#time 00:45

@@ -8,7 +8,7 @@
 		.wrapper--reciept-info
 			p.reciept-info Payment Method
 				span Credit Card
-			p.reciept-info First and last name
+			p.reciept-info First and Last Name
 				span John Doe
 			p.reciept-info Date
 				span 2019-03-11 21:54:44
@@ -48,8 +48,8 @@
 			br
 			| to delete this payment method?
 		.wrap--send-button.text-center
-			a(href="#").button.cancel-button Yes,Cancel
-			a(href="#").button.cancel-button.gray-color No
+			a(href="deposit-bank.html").button.cancel-button Yes, Delete
+			a(href="deposit-bank.html").button.cancel-button.gray-color No
 
 	//- Password has been changed successfully
 	.popup-default.popup-send.zoom-anim-dialog#popup-pass-success
@@ -64,7 +64,7 @@
 			a(href="#").button.send-button Continue
 
 	//- Password reset link has been sent to your email
-	.popup-default.popup-pass-reset.zoom-anim-dialog#popup-pass-reset
+	.popup-default.popup-pass-reset.zoom-anim-dialog.message-status#popup-pass-reset
 		h3.heading-default.text-center Password reset link has been sent to your email
 		p.popup--text-info
 			|  We’ve sent a password reset link to 
@@ -73,10 +73,10 @@
 			a(href="#").button.send-button Proceed to Login
 
 	//- Message Sent
-	.popup-default.popup-send.zoom-anim-dialog#popup-send
+	.popup-default.popup-send.zoom-anim-dialog.message-status#popup-send
 		h3.heading-default.text-center Message Sent
 		.wrap--send-button.text-center
-			a(href="#").button.send-button Proceed to Login
+			a(href="mobile--login.html").button.send-button Proceed to Login
 
 	//- Reset Password
 	.popup-default.reset-password.zoom-anim-dialog#reset-password
@@ -104,7 +104,7 @@
 				button.popup-button.button Save New Password
 
 	//- Registration
-	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step
+	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step1
 		.top-wrap--popup
 			a(href="#").link-back
 		h3.heading-popup Registration
@@ -125,11 +125,41 @@
 							option(value="") +33
 						input(id="phone-number")
 				.item--input-label
-					button.popup-button.button Continue
+					a(href="#registration-step2").popup.popup-button.button Continue
 				p.popup-text--gray.text-center Enter your mobile phone number and we will send you a verification code
 				.link--popup-default.text-center
 					a(href="#").default-link Already have an account?
-			.step-popup.registration-steps.step2
+
+	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step2
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Registration
+			snan.step-count Step 
+				span.cont-num 2 
+				| of 3
+		.height-36
+		.step-popup.registration-steps.step2
+				.item--input-label
+					.item--label
+						label(for="verification-code") Verification Code
+					.item--input
+						input(id="verification-code")
+				.item--input-label
+					a(href="#registration-step-error").popup.popup-button.button Enter Code
+				p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+				.link--popup-default.text-center
+					a(href="#").default-link.resend-code Resend Code
+					.resend-time wait
+
+	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step-error
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Registration
+			snan.step-count Step 
+				span.cont-num 2 
+				| of 3
+		.height-36
+		.step-popup.registration-steps.step2
 				.item--input-label
 					.item--label
 						label(for="verification-code") Verification Code
@@ -137,13 +167,23 @@
 						input(id="verification-code").valid-error
 						span.error-message Verification code is invalid or expired
 				.item--input-label
-					button.popup-button.button Enter Code
+					a(href="#registration-step3").popup.popup-button.button Enter Code
 				p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
 				.link--popup-default.text-center
 					a(href="#").default-link.resend-code Resend Code
 					.resend-time wait 
 						span#time 00:45
-			.step-popup.registration-steps.step3
+
+	.popup-default.registration-step.default-offset.zoom-anim-dialog#registration-step3
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Registration
+			snan.step-count Step 
+				span.cont-num 3 
+				| of 3
+		.height-36
+		form
+		.step-popup.registration-steps.step3
 				.item--input-label
 					.item--label
 						label(for="registration-email") Email
@@ -252,7 +292,8 @@
 						p.checkbox-static--text I agree with the 
 							a(href="terms-conditions.html") terms and conditions
 				.item--input-label
-					button.popup-button.button Finish
+					a(href="#verification-emeil--you").popup.popup-button.button Finish
+
 
 	//- Login
 	.popup-default.popup-login.zoom-anim-dialog#popup-login
@@ -275,9 +316,9 @@
 					input(type="checkbox", required="").checkbox-static--input
 					p.checkbox-static--text Remember Me
 			.item--input-label
-				button.popup-button.button Login
+				a(href="user.html").popup-button.button Login
 			.text-center
-				a(href="#").dont-account Don’t have an account?
+				a(href="#registration-step1" data-mobilelink="mobile--registration-step1.html").popup.dont-account.link-data Don’t have an account?
 
 	//- Forgot username or email?
 	.popup-default.name-email.default-offset.zoom-anim-dialog#name-email
@@ -393,8 +434,9 @@
 				.item--input
 					input(id="new-email")
 			.item--input-label
-				button.popup-button.button Change Email
-			p.popup-text--gray.text-center Your current email address is 
+				a(href="#new-password--phone").popup.popup-button.button Change Email
+			p.popup-text--gray.text-center.mobile-text--bottom Your current email address is 
+				br
 				a(href="#").link-white example@example.com
 
 	//- Change Email (Phone Number)
@@ -415,11 +457,68 @@
 						option(value="") +33
 					input(id="phone-number")
 			.item--input-label
-				button.popup-button.button Continue
+				a(href="#verificat-code").popup.popup-button.button Continue
 			p.popup-text--gray.text-center Enter your mobile phone number and we will send you a verification code
 
 	//- Verification Code
-	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code
+
+	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code-phone
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Phone
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="ver-code") Verification Code
+				.item--input
+					input(id="ver-code")
+			.item--input-label
+				a(href="#verificat-code-phone-error").popup.popup-button.button Enter Code
+			p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+			.link--popup-default.resend-wrapper.text-center
+				a(href="#").default-link.resend-code Resend Code
+				.resend-time wait
+
+	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code-phone-error
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Phone
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="ver-code") Verification Code
+				.item--input
+					input(id="ver-code").valid-error
+					span.error-message Verification code is invalid or expired
+			.item--input-label
+				a(href="#phone-successfully").popup.popup-button.button Enter Code
+			p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+			.link--popup-default.resend-wrapper.text-center
+				a(href="#").default-link.resend-code Resend Code
+				.resend-time wait 
+					span#time 00:45
+
+	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code-email
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="ver-code") Verification Code
+				.item--input
+					input(id="ver-code")
+			.item--input-label
+				a(href="#verificat-code-email-error").popup.popup-button.button Enter Code
+			p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
+			.link--popup-default.resend-wrapper.text-center
+				a(href="#").default-link.resend-code Resend Code
+				.resend-time wait
+
+	.popup-default.verificat-code.default-offset.zoom-anim-dialog#verificat-code-email-error
 		.top-wrap--popup
 			a(href="#").link-back
 		h3.heading-popup Change Email
@@ -432,7 +531,7 @@
 					input(id="ver-code").valid-error
 					span.error-message Verification code is invalid or expired
 			.item--input-label
-				button.popup-button.button Enter Code
+				a(href="#verification-emeil--you").popup.popup-button.button Enter Code
 			p.popup-text--gray.text-center Enter the 6-digit verification code sent to +44 535 345354342
 			.link--popup-default.resend-wrapper.text-center
 				a(href="#").default-link.resend-code Resend Code
@@ -440,8 +539,8 @@
 					span#time 00:45
 
 	//- Verify Your Email Address
-	.popup-default.verification-emeil--you.no-closed.default-offset.zoom-anim-dialog#verification-emeil--you
-		a(href="#").log-out--popup Log Out
+	.popup-default.verification-emeil--you.default-offset.zoom-anim-dialog#verification-emeil--you
+		//- a(href="index.html").log-out--popup Log Out
 		h3.heading-default.text-center Password reset link has been sent to your email
 		p.gray--text-info
 			|  We now need to verify your email address. We’ve sent an email to 
@@ -452,7 +551,7 @@
 			.wrapper-popup--message.text-center
 				span.message-verification New verification email has been sent
 		.resend-wrapper.text-center
-			a(href="#").default-link.resend-code Change Email Address
+			a(href="#new-password").popup.default-link.resend-code Change Email Address
 
 	//- Edit User Info
 	.popup-default.edit-profile.default-offset.zoom-anim-dialog#edit-profile
@@ -550,6 +649,172 @@
 		.item--input-label
 			button.popup-button.button Finish
 
+	//-  Message User Info
+	.popup-default.send-guest.default-offset.zoom-anim-dialog.message-status#message--user-info
+		h3.heading-default.text-center
+			| User info has been 
+			br
+			| successfully updated
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Got It
+
+
+	//- My account //
+	//- Change Phone
+	.popup-default.new-password.default-offset.zoom-anim-dialog#myaccount--change-phone
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Phone
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="new-pass") Password
+				.item--input
+					input(id="new-pass")
+			.item--input-label
+				a(href="#change-password--phone").popup.popup-button.button Continue
+			p.popup-text--gray.text-center
+				| Please enter your password to change 
+				br
+				| phone number
+
+	//- Change Email (Phone Number)
+	.popup-default.new-password--phone.default-offset.zoom-anim-dialog#change-password--phone
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Phone
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="phone-number") Phone Number
+				.item--input.phone-checked
+					select.select-phone.select-black
+						option(value="") +1
+						option(value="") +2
+						option(value="") +44
+						option(value="" selected) +33
+					input(id="phone-number")
+			.item--input-label
+				a(href="#verificat-code-phone").popup.popup-button.button Continue
+			p.popup-text--gray.text-center Enter your mobile phone number and we will send you a verification code
+
+	//- Phone Successfully
+	.popup-default.popup-send.default-offset.zoom-anim-dialog.message-status#phone-successfully
+		h3.heading-default.text-center 
+			| Phone number has been 
+			br
+			| successfully changed
+		.wrap--send-button.text-center
+			a(href="myaccount.html").button.send-button Got It
+
+	//- Change Email
+	.popup-default.new-password.default-offset.zoom-anim-dialog#myaccount--change-mail
+		.top-wrap--popup
+			a(href="#").link-back
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="change-email") Password
+				.item--input
+					input(id="change-email")
+			.item--input-label
+				a(href="#new-password--email").popup.popup-button.button Continue
+			p.popup-text--gray.text-center
+				| Please enter your password to change 
+				br
+				| email address
+
+	.popup-default.new-password.default-offset.zoom-anim-dialog#new-password--email
+		h3.heading-popup Change Email
+		.height-36
+		form
+			.item--input-label
+				.item--label
+					label(for="new-email") New Email
+				.item--input
+					input(id="new-email")
+			.item--input-label
+				a(href="#myaccount--change-verify").popup.popup-button.button Change Email
+
+	//- Verify Your Email Address
+	.popup-default.verification-emeil--you.default-offset.zoom-anim-dialog.message-status#myaccount--change-verify
+		.popup--text-success
+			h3.heading-default.text-center
+				| To change your email please verify your new email address
+			p.gray--text-info
+				| We now need to verify your new email address. We’ve sent an email to 
+				a(href="#") example@email.com 
+				| to verify your address. Please click the link in that email to continue. The current email will not replaced by the new email until verification.
+		.wrap--send-button.text-center
+			a(href="#myaccount--change-verify-error").popup.button.send-button Resend Verification Email
+
+	//- Verify Your Email Address Error
+	.popup-default.verification-emeil--you.default-offset.zoom-anim-dialog.message-status#myaccount--change-verify-error
+		.popup--text-success
+			h3.heading-default.text-center
+				| To change your email please verify your new email address
+			p.gray--text-info
+				| We now need to verify your new email address. We’ve sent an email to 
+				a(href="#") example@email.com 
+				| to verify your address. Please click the link in that email to continue. The current email will not replaced by the new email until verification.
+		.wrap--send-button.text-center.no-flex--mobile
+			a(href="#").button.send-button Resend Verification Email
+			.wrapper-popup--message.text-center
+				span.message-verification New verification email has been sent
+
+	//- Verify Your Email Address Code
+	.popup-default.verification-emeil--you.default-offset.zoom-anim-dialog#myaccount--change-verify-code
+		h3.heading-default.text-center
+			| To change your email please verify your new email address
+		p.gray--text-info
+			| We now need to verify your new email address. We’ve sent an email to 
+			a(href="#") example@email.com 
+			| to verify your address. Please click the link in that email to continue. The current email will not replaced by the new email until verification.
+		.wrap--send-button.text-center
+			a(href="#").button.send-button Resend Verification Email
+			.wrapper-popup--message.text-center
+				span.message-verification New verification email has been sent
+		.resend-wrapper.text-center
+			a(href="#").default-link.resend-code Change Email Address
+
+	//- Change Password
+	.popup-default.popup-login.zoom-anim-dialog#myaccount--change-password
+		h3.heading-popup Change Password
+		form
+			.item--input-label
+				.item--label
+					label(for="account-pass") Password
+				.item--input
+					input(id="account-pass")
+			.item--input-label
+				.item--label
+					label(for="account-new-pass") New Password
+				.item--input
+					input(id="account-new-pass")
+			.item--input-label
+				.item--label
+					label(for="account-confirm-pass") Confirm New Password
+				.item--input
+					input(id="account-confirm-pass")
+			.item--input-label
+				button.popup-button.button Change Password
+
+	//- Change Password Successfully
+	.popup-default.popup-send.default-offset.zoom-anim-dialog.message-status#change-pass-successfully
+		h3.heading-default.text-center 
+			| Your password has 
+			br
+			| been successfully changed
+		.wrap--send-button.text-center
+			a(href="myaccount.html").button.send-button Got It
+
+
+
+
 	//-  Message Sent Guest
 	.popup-default.send-guest.default-offset.zoom-anim-dialog#send-guest
 		h3.heading-default.text-center Message Sent
@@ -639,32 +904,59 @@
 			button.popup-button.button Send
 
 	//- Are you sure you want to close this ticket?
-	.popup-default.popup--withdraw-cancel.default-offset.zoom-anim-dialog#ticket-cancel
+	.popup-default.popup--withdraw-cancel.default-offset.zoom-anim-dialog.message-status#ticket-cancel
 		.height-36
 		h3.heading-default.text-center 
 			| Are you sure you want
 			br
 			| to close this ticket?
 		.wrap--send-button.text-center
-			a(href="#").button.cancel-button Yes,Cancel
+			a(href="#ticket-success").popup.button.cancel-button Yes,Cancel
 			a(href="#").button.cancel-button.gray-color No
 
 	//- New ticket  has been created
-	.popup-default.popup-pass-reset.zoom-anim-dialog#create-ticket
+	.popup-default.popup-pass-reset.zoom-anim-dialog.message-status#create-ticket
 		h3.heading-default.text-center New ticket  has been created
 		p.popup--text-info We will respond to you within 24 hours
 		.wrap--send-button.text-center
-			a(href="#").button.send-button Got It
+			a(href="contact-tikets-active.html").button.send-button Got It
 
-	//- Withdraw Successfully
-	.popup-default.popup--withdraw-success.default-offset.zoom-anim-dialog#ticket-success
+	//- Ticket Successfully
+	.popup-default.popup--withdraw-success.default-offset.zoom-anim-dialog.message-status#ticket-success
 		.height-36
 		h3.heading-default.text-center Ticket has been successfully closed
 		.wrap--send-button.text-center
-			a(href="#").button.send-button Got It
+			a(href="contact-tikets-closed.html").button.send-button Got It
+
+	//- Settings
+	.popup-default.default-offset.settings.zoom-anim-dialog.message-status#settings
+		.height-36
+		h3.heading-default Settings
+		.settings-wrapper
+			.settings-item
+				span.name--settings-item Odds Display
+				select.select-phone.select-black
+					option(value="") Fractional
+					option(value="") Fractional 1
+					option(value="") Fractional 2
+					option(value="") Fractional 3
+			.settings-item
+				span.name--settings-item Language
+				select.select-phone.select-black
+					option(value="") English
+					option(value="") Español
+					option(value="") Deutsch
+					option(value="") Français
+			.settings-item
+				span.name--settings-item Time Zone
+				select.select-phone.select-black
+					option(value="") GMT-4
+					option(value="") GMT-3
+					option(value="") GMT-2
+					option(value="") GMT-1
 
 //- Filter History
-.custom-popup#popup-filter--mobile
+div(style="display: none").custom-popup#popup-filter--mobile
 	.overlay-popup
 	.popup-default.mobile-popup--style
 		span.custom-close
@@ -711,7 +1003,7 @@
 					button.reset.reset-mobile Reset Filters
 
 //- Filter History
-.custom-popup#popup-trnfilter--mobile
+div(style="display: none").custom-popup#popup-trnfilter--mobile
 	.overlay-popup
 	.popup-default.mobile-popup--style
 		span.custom-close
@@ -751,7 +1043,7 @@
 					button.reset.reset-mobile Reset Filters
 
 //- Choose Popup
-.add-new--payment-mobile#choose-payment
+div(style="display: none").add-new--payment-mobile#choose-payment
 	span.custom-close
 	.heading-choose
 		h3.head-choose Choose Payment Method

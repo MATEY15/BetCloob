@@ -58,7 +58,7 @@ block prepend main
 							span.result-option 11 March 1985
 
 					.account-wrap--button.text-right
-						a(href="#edit-profile").popup.button.button-gray Edit
+						a(href="#edit-profile" data-mobilelink="mobile--myaccoun-edit.html").link-data.popup.button.button-gray Edit
 
 				.account-info--black
 					.my-information
@@ -66,7 +66,7 @@ block prepend main
 							p.my-info--name Phone Number
 							p.my-info--result +44 535 345354342
 						.my-info--change
-							a(href="#verificat-code").popup.button.button-gray Change
+							a(href="#myaccount--change-phone" data-mobilelink="mobile--myaccoun-change-phone.html").link-data.popup.button.button-gray Change
 
 				.account-info--black
 					.my-information
@@ -74,8 +74,8 @@ block prepend main
 							p.my-info--name Email
 							p.my-info--result example@mail.com
 						.my-info--change
-							button.button.button-gray Change
+							a(href="#myaccount--change-mail" data-mobilelink="mobile--myaccoun-change-email.html").link-data.popup.button.button-gray Change
 
 				.mobile--marketing-preferences
 					a(href="myaccount-marketing.html").popup-button.button Marketing Preferences
-					a(href="#").change-link.default-link Change Password
+					a(href="mobile--myaccoun-change-pass.html").change-link.default-link Change Password

@@ -1,0 +1,43 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var title = "Forgot password?"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="mobile--login.html").link-back
+			h3.heading-popup Forgot username or email?
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="phone-number") Phone Number
+					.item--input.phone-checked
+						select.select-phone.select-black
+							option(value="") +1
+							option(value="") +2
+							option(value="") +44
+							option(value="") +33
+						input(id="phone-number")
+				.item--input-label
+					.item--label
+						label(for="enter-pass") Enter Code
+					.captcha--wrapper
+						.items--captcha-popup
+							input(type="text", id="enter-pass").input-black
+						.captcha-main
+							img(src="img/captcha.jpg", alt="")
+				.item--input-label
+					a(href="#popup-send").popup.popup-button.button Continue
+				p.popup-text--gray.mobile-text--bottom
+					| Enter your mobile phone number and we will 
+					br
+					| send you username and email related to your 
+					br
+					| account

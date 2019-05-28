@@ -1,0 +1,31 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "Login"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="mobile--myaccoun-change-phone.html").link-back
+			h3.heading-popup Change Phone
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="ver-code") Verification Code
+					.item--input
+						input(id="ver-code")
+				.item--input-label
+					a(href="#phone-successfully").popup.popup-button.button Enter Code
+				p.popup-text--gray.text-center.mobile-text--bottom
+					| Enter the 6-digit verification code sent to 
+					br
+					| +44 535 345354342
+				.link--popup-default.resend-wrapper.text-center.wraps-mobile--bottom
+					a(href="#").default-link.resend-code Resend Code

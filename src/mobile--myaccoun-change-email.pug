@@ -1,0 +1,29 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "Login"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="myaccount.html").link-back
+			h3.heading-popup Change Email
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="new-pass") Password
+					.item--input
+						input(id="new-pass")
+				.item--input-label
+					a(href="mobile--myaccoun-change-newemail.html").popup-button.button Continue
+				p.popup-text--gray.text-center.mobile-text--bottom
+					| Please enter your password to change 
+					br
+					| phone number

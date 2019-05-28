@@ -1,0 +1,35 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			h3.heading-popup.heading-step Registration
+				snan.step-count Step 
+					span.cont-num 1 
+					| of 3
+			.height-36
+			form
+				.step-popup.registration-steps.step1
+					.item--input-label
+						.item--label
+							label(for="phone-number") Phone Number
+						.item--input.phone-checked
+							select.select-phone.select-black
+								option(value="") +1
+								option(value="") +2
+								option(value="" selected) +44
+								option(value="") +33
+							input(id="phone-number")
+					.item--input-label
+						a(href="mobile--registration-step2.html").popup-button.button Continue
+					p.popup-text--gray.text-center.mobile-text--bottom Enter your mobile phone number and we will send you a verification code
+					.text-center.wraps-mobile--bottom
+						a(href="mobile--registration-step1.html").default-link Already have an account?

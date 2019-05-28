@@ -1,0 +1,74 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "New ticket"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			h3.heading-popup.heading-step Registration
+				snan.step-count Step 
+					span.cont-num 3 
+					| of 3
+			.height-36
+			form
+				.step-popup.registration-steps.step3
+				.item--input-label
+					.item--label
+						label(for="registration-email") Email
+					.item--input
+						input(id="registration-email")
+				.item--input-label
+					.item--label
+						label(for="registration-pass1") Password
+					.item--input
+						input(id="registration-pass1")
+				.item--input-label
+					.item--label
+						label(for="registration-pass2") Confirm Password
+					.item--input
+						input(id="registration-pass2")
+				.item--input-fifty
+					.item--input-label
+						.item--label
+							label(for="registration-name1") First Name
+						.item--input
+							input(id="registration-name1")
+					.item--input-label
+						.item--label
+							label(for="registration-name2") Last Name
+						.item--input
+							input(id="registration-name2")
+				.item--input-label
+					.item--label
+						label(for="registration-user") Username
+					.item--input
+						input(id="registration-user")
+				.item--input-label
+					.item--gender.gender-mobile
+						label Gender
+						.payment--select-price.payment--gender.payment--gender-mobile
+							label.radio--select-price
+								input(type="radio" name="radio2" required="" checked)
+								.text--select-price Male
+							label.radio--select-price
+								input(type="radio" name="radio2" required="")
+								.text--select-price Female
+				.item--input-label
+					.item--label
+						label Date of Birth
+					.item--input
+						input(id="mobile-data" placeholder="DD/MM/YYYY").mobile--gray-color
+				.label-payment--fill
+					label.checkbox-static
+						input(type="checkbox", required="").checkbox-static--input
+						p.checkbox-static--text I agree with the 
+							a(href="terms-conditions.html") terms and conditions
+				.item--input-label
+					a(href="#verification-emeil--you").popup.popup-button.button Finish

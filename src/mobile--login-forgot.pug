@@ -1,0 +1,36 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var title = "Forgot password?"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="mobile--login.html").link-back
+			h3.heading-popup Forgot password?
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="email-forgot") Email
+					.item--input
+						input(id="email-forgot")
+				.item--input-label
+					.item--label
+						label(for="enter-pass") Enter Code
+					.captcha--wrapper
+						.items--captcha-popup
+							input(type="text", id="enter-pass").input-black
+						.captcha-main
+							img(src="img/captcha.jpg", alt="")
+				.item--input-label
+					a(href="#popup-pass-reset").popup.popup-button.button Continue
+				p.popup-text--gray.mobile-text--bottom
+					| Enter your email and we will send you 
+					br
+					| password reset link

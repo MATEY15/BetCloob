@@ -22,12 +22,7 @@ html(lang="en")
 			meta(name="msapplication-navbutton-color", content="#161516")
 			meta(name="apple-mobile-web-app-status-bar-style", content="#161516")
 
-	body
-		
-		svg.shape-overlays(viewbox='0 0 100 100', preserveaspectratio='none')
-			path.shape-overlays__path
-			path.shape-overlays__path
-			path.shape-overlays__path
+	body(style="display: none")
 
 		div#overlayer
 
@@ -44,6 +39,6 @@ html(lang="en")
 			include include/popup
 
 		block scripts
-			script(src='https://unpkg.com/flipping@latest/dist/flipping.web.js')
-			script(src='js/shape-overlays.js')
+			//- script(src='https://unpkg.com/flipping@latest/dist/flipping.web.js')
+			//- script(src='js/shape-overlays.js')
 			script(src='js/scripts.js')

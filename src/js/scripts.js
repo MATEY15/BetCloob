@@ -36,10 +36,19 @@ $( window ).resize(function() {
 
 $(".burger-menu").on("click", function(e) {
 	e.preventDefault(); 
-  $(this).toggleClass('is-active');
-  $('.top-line').toggleClass('is-active');
-  $('.mobile-menu').toggleClass('is-active');
-  $("body").toggleClass('overflow');
+	$(this).toggleClass('is-active');
+	$('.top-line').toggleClass('is-active');
+	$('.mobile-menu').toggleClass('is-active');
+	$("body").toggleClass('overflow');
+});
+$(document).mouseup(function (e) {
+	var container = $(".mobile-menu, .burger-menu");
+	if (container.has(e.target).length === 0){
+		$('.burger-menu').removeClass('is-active');
+		$('.top-line').removeClass('is-active');
+		$('.mobile-menu').removeClass('is-active');
+		$("body").removeClass('overflow');
+	}
 });
 
 $('.search-link').on("click", function(e) {
@@ -214,7 +223,7 @@ var mediaQuery = function() {
 
 			dropContainer.find('.head--credit-card').removeClass('choose-open')
 			dropContainer.find('.head--credit-card').on('click', function() {
-				$('.add-new--payment').addClass('is-active');
+				$('.add-new--payment').toggleClass('is-active');
 			});
 			$(document).mouseup(function (e) {
 				var container = $(".head--credit-card");
@@ -234,7 +243,7 @@ var mediaQuery = function() {
 
 /* Popup Window */
 
-$(function () {
+var initPopup = function () {
 	$(".popup").magnificPopup({
 		type: 'inline',
 		removalDelay: 300,
@@ -254,7 +263,7 @@ $(function () {
 		$.magnificPopup.close();
 	});
 
-});
+};
 
 $('#popup-close').on('click', function(e) {
 	e.preventDefault();
@@ -284,41 +293,90 @@ var popupMobile = function() {
 	});
 };
 
+// Crop Text
+
+var cropText = function() {
+	console.log('1321')
+	var sizeText = 70,
+	newsContent= $('.message-tiket p'),
+	newsText = newsContent.text();
+
+	if(newsText.length > sizeText){
+		newsContent.text(newsText.slice(0, sizeText) + ' ...');
+	}
+};
+
 // Edit link Mobile&Desctop
 
-var sq = matchMedia('(max-width: 480px)'),
-		linksData = $('.link-data'),
+var linksData = $('.link-data'),
 		linksHref,
 		linksPopup;
 
-var mobileDesctop = function(e) {
+linksData.each(function() {
 
-	linksData.each(function() {
+	linksHref =  $(this).attr("href");
+	linksPopup = $(this).attr('data-mobilelink');
 
-		linksHref =  $(this).attr("href");
-		linksPopup = $(this).attr('data-mobilelink');
+	var slice = $(this);
 
-			if (e.matches) {
-				$(this).attr('href',linksPopup);
-				$(this).attr('data-mobilelink', linksHref);
+	if(matchMedia){
+	var screen = window.matchMedia("(max-width: 480px)");
+	screen.addListener(changes);
+	changes(screen);
+}
 
-				$(this).off('click');
-				$(this).removeClass('popup');
-			}
-			else {
-				$(this).attr('href',linksHref);
-				$(this).attr('data-mobilelink', linksPopup);
+	function changes(screen){
+	if(screen.matches){
+		slice.attr('href', linksPopup);
+		slice.removeClass('popup');
+		slice.off('click');
+console.log('2545')
+		// cropText();
+	}else{
+		slice.attr('href',linksHref);
+		slice.addClass('popup');
+		initPopup();
 
-				$(this).addClass('popup');
-			}
+	}
+}
+});
 
-		// console.log(linksPopup)
-		// console.log(linksHref)
-	});
 
-};
-sq.addListener(mobileDesctop);
-mobileDesctop(sq);
+
+// var mobileDesctop = function(e) {
+
+// 	linksData.each(function() {
+
+// 		linksHref =  $(this).attr("href");
+// 		linksPopup = $(this).attr('data-mobilelink');
+
+// 		temp1 = linksHref;
+// 		temp2 = linksPopup;
+
+// 			if (e.matches) {
+// 				$(this).attr('href',linksPopup);
+// 				$(this).attr('data-mobilelink', linksHref);
+
+// 				// linksHref = linksHref;
+// 				// linksPopup = linksPopup;
+
+// 				$(this).off('click');
+// 				$(this).removeClass('popup');
+// 			}
+// 			else {
+// 				$(this).attr('href',temp1);
+// 				$(this).attr('data-mobilelink', temp2);
+
+// 				$(this).addClass('popup');
+// 			}
+
+// 		// console.log(linksPopup)
+// 		// console.log(linksHref)
+// 	});
+
+// };
+// sq.addListener(mobileDesctop);
+// mobileDesctop(sq);
 
 
 checkInput();
@@ -331,5 +389,6 @@ filterDate();
 cardDrop();
 popupMobile();
 mediaQuery();
+initPopup();
 
 // countCode();

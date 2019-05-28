@@ -1,0 +1,25 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "Login"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="myaccount.html").link-back
+			h3.heading-popup Change Email
+			.height-36
+			form
+				.item--input-label
+					.item--label
+						label(for="new-email") New Email
+					.item--input
+						input(id="new-email")
+				.item--input-label
+					a(href="#myaccount--change-verify").popup.popup-button.button Change Email

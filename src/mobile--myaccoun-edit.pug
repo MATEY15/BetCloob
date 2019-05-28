@@ -1,0 +1,50 @@
+extends layout.pug
+
+block variable
+	-var login = true
+	-var titleName = Login
+	-var title = "Login"
+
+block header-login
+
+	include include/header
+
+block prepend main
+	+b.MAIN.section-main
+		section.mobile-page
+			a(href="myaccount.html").link-back
+			h3.heading-popup Edit User Info
+			.height-36
+			.item--input-fifty
+				.item--input-label
+					.item--label
+						label(for="registration-name1") First Name
+					.item--input
+						input(id="registration-name1" value="John")
+				.item--input-label
+					.item--label
+						label(for="registration-name2") Last Name
+					.item--input
+						input(id="registration-name2" value="Doe")
+			.item--input-label
+				.item--label
+					label(for="registration-user") Username
+				.item--input
+					input(id="registration-user" value="johndoe")
+			.item--input-label
+				.item--gender.gender-mobile
+					label Gender
+					.payment--select-price.payment--gender.payment--gender-mobile
+						label.radio--select-price
+							input(type="radio" name="radio2" required="" checked)
+							.text--select-price Male
+						label.radio--select-price
+							input(type="radio" name="radio2" required="")
+							.text--select-price Female
+			.item--input-label
+				.item--label
+					label Date of Birth
+				.item--input
+					input(id="mobile-data" value="11 Mar 1989").mobile--gray-color
+			.item--input-label.mobile--no-margin
+				a(href="#message--user-info").popup.popup-button.button Finish

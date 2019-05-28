@@ -42,7 +42,7 @@
 		padding-top 30px
 		
 		.message-tiket
-			flex-grow 1px
+			flex-grow 1
 			p
 				fsR(12px)
 				line-height 16px
@@ -114,6 +114,15 @@
 		background-color: #353435
 		.reply-message__content
 			padding 23px 32px 0
+			textarea
+				fsR(14px)
+				line-height 22px
+				margin-bottom 14px
+				resize none
+				height auto
+				min-height 164px
+				width 100%
+				background-color: #353435
 			&>p
 				fsR(14px)
 				line-height 22px
@@ -122,8 +131,7 @@
 .reply-form--send
 	margin-top 24px
 	border-top: 1px solid #1d1c1d
-	form
-		display flex
+	display flex
 	.button-reply
 		width 100px
 		height 56px
@@ -154,6 +162,14 @@
 				c cWhite
 				svg
 					fill cWhite
+
+.new-ticket--fixed
+	position fixed
+	width 100%
+	bottom 24px
+	left 0
+	padding 0 24px
+	display none
 
 // Chat
 

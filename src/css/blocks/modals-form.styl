@@ -39,7 +39,8 @@
 		background: cGray
 
 .no-closed
-	.mfp-close
+	.mfp-close,
+	.custom-close
 		display none !important
 
 .link-popups
@@ -446,6 +447,14 @@ body.no-scroll
 .main-form_input:-moz-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 .main-form_input:-ms-input-placeholder {font-family 12px;  color: rgba(0, 0, 0, 0.09);}
 
+.mobile--gray-color
+	c cGray !important
+
+.mobile--gray-color::-webkit-input-placeholder {color: #6f6e70;}
+.mobile--gray-color::-moz-placeholder {color: #6f6e70;}
+.mobile--gray-color:-moz-placeholder {color: #6f6e70;}
+.mobile--gray-color:-ms-input-placeholder {color: #6f6e70;}
+
 .mfp-hide {
   display: none;
 }
@@ -571,3 +580,38 @@ body.no-scroll
 .my-mfp-slide-bottom.mfp-removing.mfp-bg {
 	opacity: 0;
 }
+
+
+@media screen and (max-width: SM720)
+
+	.input-black,
+	.item--input-label .item--input input
+		height 48px
+	
+	.select-black+.select2-container--default .select2-selection--single
+		min-height 48px
+		height 48px
+		.select2-selection__arrow:after
+			top 21px
+		.select2-selection__rendered
+			min-height 48px
+			line-height 48px
+	
+	.captcha--wrapper
+		.items--captcha-popup
+			width 100%
+			input
+				min-width auto
+				width 100%
+		.captcha-main
+			position relative
+			min-width 175px
+			img
+				position absolute
+				width auto
+				height 100%
+	
+	.mobile-text--bottom
+		margin-top 4px
+		text-align center
+		line-height 16px

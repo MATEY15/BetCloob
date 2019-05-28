@@ -17,7 +17,7 @@ block prepend main
 				include include/menu/account-menu
 			.main-container
 				.heading--main-container
-					h1.black-main--head= title
+					h1.black-main--head Deposit
 
 				include include/menu/mobile-menu
 				
@@ -70,3 +70,36 @@ block prepend main
 							.payment-card--info
 								p *4242
 								span Credit Card
+
+						.add-new--payment
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--mc.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--visa.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--paypal.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add-payment--items
+								span.arrow-default
+								.payment-card
+									img(src="img/credit-card--ame.svg", alt="")
+									.payment-card--info
+										p *4242
+										span Credit Card
+							a(href="#").add--payments-method
+								<svg xmlns="http://www.w3.org/2000/svg" class="pluss-icon" width="12" height="12" viewBox="0 0 12 12"><g><g><path d="M0 5.5A.5.5 0 0 1 .5 5H5V.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V5h4.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H7v4.5a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V7H.5a.5.5 0 0 1-.5-.5z"/></g></g></svg>
+								| Add New Payment Method

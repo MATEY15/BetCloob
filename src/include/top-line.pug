@@ -83,7 +83,7 @@
 											li
 												a(href="transaction-history.html") Transaction History
 											li
-												a(href="login.html").disable-link Logout
+												a(href="index.html").disable-link Logout
 
 						a(href="#").button.deposit-head Deposit
 				
@@ -91,16 +91,16 @@
 					.nav.navigate-login
 						ul
 							li
-								a(href="mobile--login.html") Login
+								a(href="#popup-login" data-mobilelink="mobile--login.html").link-data.popup Login
 							li
-								a(href="user.html")#popups Register
+								a(href="#registration-step1" data-mobilelink="mobile--registration-step1.html")#popups.popup.link-data Register
 
 			.mobile-menu
 				ul
 					li
-						a(href="#") Settings
+						a(href="#settings" data-mobilelink="mobile--settings.html").popup.link-data Settings
 					li
-						a(href="") Contact Us
+						a(href="contact-tikets.html") Contact Us
 							if(user)
 								span.message 6
 					li
